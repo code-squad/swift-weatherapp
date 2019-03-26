@@ -16,9 +16,9 @@ enum Weather: Int, CaseIterable {
     
     func getText() -> String {
         switch self {
-        case .cloudy: return "오늘 날씨를 구름이낍니다."
+        case .cloudy: return "오늘 날씨는 구름이 낍니다."
         case .rainny: return "오늘 날씨는 흐림입니다."
-        case .snowy: return "오늘 날씨는 눈이옵니다."
+        case .snowy: return "오늘 날씨는 눈이 옵니다."
         case .sunny: return "오늘 날씨는 화창합니다."
         }
     }

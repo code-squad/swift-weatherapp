@@ -80,12 +80,17 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q43-yg-7bs" userLabel="detailButton">
+                                                    <rect key="frame" x="362" y="10" width="22" height="22"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="q43-yg-7bs" firstAttribute="top" secondItem="Vy4-9g-CEI" secondAttribute="top" constant="10" id="4dK-1F-2FI"/>
                                                 <constraint firstItem="HGw-d1-aV8" firstAttribute="leading" secondItem="Vy4-9g-CEI" secondAttribute="leadingMargin" id="Bpn-5W-Afw"/>
                                                 <constraint firstItem="HGw-d1-aV8" firstAttribute="top" secondItem="Vy4-9g-CEI" secondAttribute="top" id="Uwo-AU-yy7"/>
                                                 <constraint firstAttribute="bottom" secondItem="HGw-d1-aV8" secondAttribute="bottom" id="eId-kD-Hva"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="HGw-d1-aV8" secondAttribute="trailing" id="nEX-iz-UJg"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="q43-yg-7bs" secondAttribute="trailing" constant="10" id="oaJ-s1-1HI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
