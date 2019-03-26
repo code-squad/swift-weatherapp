@@ -63,16 +63,34 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" id="cHi-bt-Aii">
-                                        <rect key="frame" x="0.0" y="80" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" rowHeight="180" id="cHi-bt-Aii">
+                                        <rect key="frame" x="0.0" y="80" width="414" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cHi-bt-Aii" id="Vy4-9g-CEI">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="179.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather-rainny" translatesAutoresizingMaskIntoConstraints="NO" id="HGw-d1-aV8" userLabel="Weather Image">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="179.66666666666666"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eh-6M-XwO" userLabel="weatherDescription">
+                                                    <rect key="frame" x="49" y="77" width="326" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HGw-d1-aV8" firstAttribute="leading" secondItem="Vy4-9g-CEI" secondAttribute="leadingMargin" id="Bpn-5W-Afw"/>
+                                                <constraint firstItem="HGw-d1-aV8" firstAttribute="top" secondItem="Vy4-9g-CEI" secondAttribute="top" id="Uwo-AU-yy7"/>
+                                                <constraint firstAttribute="bottom" secondItem="HGw-d1-aV8" secondAttribute="bottom" id="eId-kD-Hva"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="HGw-d1-aV8" secondAttribute="trailing" id="nEX-iz-UJg"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cYn-WS-RTj">
-                                        <rect key="frame" x="0.0" y="124" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="260" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cYn-WS-RTj" id="l38-vy-Duh">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -91,6 +109,8 @@
                         <outlet property="dateLabel" destination="Yug-H9-AvF" id="Oxq-f7-gsz"/>
                         <outlet property="eventLabel" destination="mPM-mg-odT" id="6bC-p5-zED"/>
                         <outlet property="timeLabel" destination="KP6-D1-YDY" id="hLw-R4-0AL"/>
+                        <outlet property="weatherDescription" destination="3eh-6M-XwO" id="JGc-Ku-eGq"/>
+                        <outlet property="weatherImage" destination="HGw-d1-aV8" id="O9H-kr-wdI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AEd-49-tE0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -98,4 +118,7 @@
             <point key="canvasLocation" x="-111.59420289855073" y="44.836956521739133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="weather-rainny" width="400" height="250"/>
+    </resources>
 </document>
