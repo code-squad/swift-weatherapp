@@ -52,7 +52,12 @@ extension HolidayViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseQueue", for: indexPath)
+        let cell: UITableViewCell
+        if let reuseCell = tableView.dequeueReusableCell(withIdentifier: "reuseQueue") { cell = reuseCell }
+        else { cell = UITableViewCell(style: .subtitle, reuseIdentifier: "reuseQueue") }
+    
+        cell.textLabel?.text = dateEventInformation[indexPath.row]["date"]
+        cell.detailTextLabel?.text = dateEventInformation[indexPath.row]["subtitle"]
         return cell
     }
 }
