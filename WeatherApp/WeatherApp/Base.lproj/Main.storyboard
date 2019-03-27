@@ -86,16 +86,57 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="dyk-9L-a6G" userLabel="WeatherCell">
-                                        <rect key="frame" x="0.0" y="80" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="dyk-9L-a6G" userLabel="WeatherCell">
+                                        <rect key="frame" x="0.0" y="80" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dyk-9L-a6G" id="obh-LA-VzH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dyk-9L-a6G" id="obh-LA-VzH">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0X-yJ-Phe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200.33333333333334"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather-sunny" translatesAutoresizingMaskIntoConstraints="NO" id="4ZN-tS-7si">
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200.33333333333334"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 날씨는 흐림입니다!?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ch3-i9-3we" userLabel="weatherDescrirption">
+                                                            <rect key="frame" x="16" y="88" width="382" height="24.333333333333329"/>
+                                                            <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpm-Rj-Nia">
+                                                            <rect key="frame" x="376" y="16.333333333333332" width="22" height="21.999999999999996"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="ch3-i9-3we" firstAttribute="leading" secondItem="p0X-yJ-Phe" secondAttribute="leading" constant="16" id="4kr-Kh-F9t"/>
+                                                        <constraint firstAttribute="height" constant="200" id="6i3-Hw-Ryb"/>
+                                                        <constraint firstAttribute="trailing" secondItem="4ZN-tS-7si" secondAttribute="trailing" id="8NX-3z-xfy"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ch3-i9-3we" secondAttribute="trailing" constant="16" id="CZF-zY-E27"/>
+                                                        <constraint firstItem="4ZN-tS-7si" firstAttribute="leading" secondItem="p0X-yJ-Phe" secondAttribute="leading" id="Gj0-oz-fka"/>
+                                                        <constraint firstItem="cpm-Rj-Nia" firstAttribute="top" secondItem="p0X-yJ-Phe" secondAttribute="top" constant="16" id="U9x-9U-ZeA"/>
+                                                        <constraint firstItem="ch3-i9-3we" firstAttribute="centerY" secondItem="p0X-yJ-Phe" secondAttribute="centerY" id="fdm-aT-NN3"/>
+                                                        <constraint firstItem="4ZN-tS-7si" firstAttribute="top" secondItem="p0X-yJ-Phe" secondAttribute="top" id="htK-oh-HNo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cpm-Rj-Nia" secondAttribute="trailing" constant="16" id="qXJ-1a-cjv"/>
+                                                        <constraint firstAttribute="bottom" secondItem="4ZN-tS-7si" secondAttribute="bottom" id="z1C-aM-TdQ"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="p0X-yJ-Phe" secondAttribute="trailing" id="NuV-uS-2bG"/>
+                                                <constraint firstItem="p0X-yJ-Phe" firstAttribute="leading" secondItem="obh-LA-VzH" secondAttribute="leading" id="dWv-a3-DAe"/>
+                                                <constraint firstItem="p0X-yJ-Phe" firstAttribute="top" secondItem="obh-LA-VzH" secondAttribute="top" id="nqM-t7-Uoe"/>
+                                                <constraint firstAttribute="bottom" secondItem="p0X-yJ-Phe" secondAttribute="bottom" id="vy4-RM-QR0"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Yut-0z-Y3H">
-                                        <rect key="frame" x="0.0" y="124" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="280" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yut-0z-Y3H" id="pnk-Vc-Kra">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -116,4 +157,7 @@
             <point key="canvasLocation" x="901" y="138"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="weather-sunny" width="200" height="125"/>
+    </resources>
 </document>
