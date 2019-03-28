@@ -17,27 +17,21 @@ class HolidayViewController: UIViewController {
         // Do any additional setup after loading the view.
         parseJSONData()
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     func parseJSONData() {
-        let json = """
-                    [{\"date\":\"1월1일\", \"subtitle\":\"신정\"},
-                    {\"date\":\"2월16일\", \"subtitle\":\"구정\"},
-                    {\"date\":\"3월1일\", \"subtitle\":\"삼일절\"},
-                    {\"date\":\"5월5일\", \"subtitle\":\"어린이날\"},
-                    {\"date\":\"5월22일\", \"subtitle\":\"석가탄신일\"},
-                    {\"date\":\"6월6일\", \"subtitle\":\"현충일\"},
-                    {\"date\":\"8월15일\", \"subtitle\":\"광복절\"},
-                    {\"date\":\"9월24일\", \"subtitle\":\"추석\"},
-                    {\"date\":\"10월3일\", \"subtitle\":\"개천절\"},
-                    {\"date\":\"10월9일\", \"subtitle\":\"한글날\"},
-                    {\"date\":\"12월25일\", \"subtitle\":\"성탄절\"}]
-                    """
-        
-        let jsonData: Data? = json.data(using: .utf8)
+        let json = getStringFromURL()
+        let jsonData: Data? = json?.data(using: .utf8)
         guard let data = jsonData else { return }
         guard let convertedData = try? JSONSerialization.jsonObject(with: data, options: []) as? [Dictionary<String, String>] else { return }
         dateEventInformation = convertedData
+    }
+    
+    private func getStringFromURL() -> String? {
+        guard let url = URL(string: "http://public.codesquad.kr/jk/weatherapp/customcell.json") else { return nil }
+        guard let content = try? String(contentsOf: url) else { return nil }
+        return content
     }
     
 }
@@ -52,12 +46,25 @@ extension HolidayViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell
-        if let reuseCell = tableView.dequeueReusableCell(withIdentifier: "reuseQueue") { cell = reuseCell }
-        else { cell = UITableViewCell(style: .subtitle, reuseIdentifier: "reuseQueue") }
-        cell.textLabel?.text = dateEventInformation[indexPath.row]["date"]
-        cell.detailTextLabel?.text = dateEventInformation[indexPath.row]["subtitle"]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseQueue", for: indexPath) as! HolidayTableViewCell
+        cell.dateLabel.text = dateEventInformation[indexPath.row]["date"]
+        cell.subtitleLabel.text = dateEventInformation[indexPath.row]["subtitle"]
+        
+        let cellImageName = dateEventInformation[indexPath.row]["image"]
+        switch cellImageName {
+        case "sunny": cell.weatherImage.image = UIImage(named: "weather-sunny")
+        case "cloudy": cell.weatherImage.image = UIImage(named: "weather-cloudy")
+        case "snowy": cell.weatherImage.image = UIImage(named: "weather-snowy")
+        case "rainny": cell.weatherImage.image = UIImage(named: "weather-rainny")
+        default: cell.weatherImage.backgroundColor = UIColor.gray
+        }
         return cell
+    }
+}
+
+extension HolidayViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }
 
