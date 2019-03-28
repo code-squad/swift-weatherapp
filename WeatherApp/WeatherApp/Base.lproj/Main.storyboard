@@ -157,10 +157,10 @@
             </objects>
             <point key="canvasLocation" x="901" y="138"/>
         </scene>
-        <!--View Controller-->
+        <!--Holiday View Controller-->
         <scene sceneID="w9L-cD-fTN">
             <objects>
-                <viewController id="Hhc-i2-axy" sceneMemberID="viewController">
+                <viewController id="Hhc-i2-axy" customClass="HolidayViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eSu-R7-bvd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,6 +194,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Hhc-i2-axy" id="pNu-PI-9VH"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -205,6 +208,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cqw-34-hGU"/>
                     </view>
+                    <connections>
+                        <outlet property="holidayTableView" destination="XCd-Px-8kf" id="s5n-pL-N8q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5Y-eG-wkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
