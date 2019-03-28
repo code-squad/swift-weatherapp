@@ -35,3 +35,12 @@ STEP18 날씨 앱 저장소
 
 
 <img src="https://user-images.githubusercontent.com/38850628/55127578-f705d200-5153-11e9-8e3e-4a3185a76805.png" height="700">
+
+### step-03. 커스텀 셀
+
+#### 배운내용
+
+- `Data(contentsOf:)` method를 사용하면 쉽고 간편하게 해당 url의 데이터를 가져올 수 있다.
+- `http` 통신을 하려면 App Transport Security Settings의 Allow Arbitrary Loads값을 YES로 바꿔줘야한다.
+
+<img src="https://user-images.githubusercontent.com/38850628/55155712-6eab1f80-519b-11e9-8cc2-bb61b593ee91.png" height="700">
