@@ -195,3 +195,165 @@ guard let convertedData = try? JSONSerialization.jsonObject(with: data, options:
 
 <img src="6.png" height="500px"/>
 
+
+
+
+
+### Step 3
+
+![scereen](./8.png)
+
+![screen](./9.png)
+
+* Custom Cell을 만들어서 디자인한다.
+* Info.plist에서 http접근을 허용하고 URL로부터 text를 읽어온다.
+* Cell의 높이를 지정하는 방법을 안다.
+
+
+
+
+
+**Custom Cell 만들기**
+
+1. MainStoryBoard에 TableView를 생성한다.
+2. TableView에 Cell을 하나 추가하고 Cell Style을 Custom으로 지정해준다.
+3. Cell의 `identifier` 을 꼭 지정하고 기억한다.
+4. StoryBoard CustomCell의 Component들을 추가해 디자인한다.
+
+![screen](./10.png)
+
+5. CustomViewCell Class를 하나 생성 후 `IBOutlet` 요소들을 추가한다.
+
+```swift
+class HolidayTableViewCell: UITableViewCell {
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var weatherImage: UIImageView!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        // Configure the view for the selected state
+    }
+}
+```
+
+6. tableView에 `TableViewDataSource` 을 채택한 객체를 등록해준다.
+
+```swift
+class HolidayViewController: UIViewController {
+  @IBOutlet weak var tableView: UITableView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    tableView.dataSouce = self
+  }
+}
+
+extension HolidayViewController: UITableViewDataSource {
+}
+```
+
+7. DataSource의 채택에 필요한 메소드들을 구현한다.
+
+```swift
+func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+}
+
+func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  return dateEventInformation.count
+}
+    
+// 여기서 Identifier에 아까 Cell생성 시 등록했던 Identifier를 적어준다.
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  let cell = tableView.dequeueReusableCell(withIdentifier: "reuseQueue", for: indexPath) as! HolidayTableViewCell
+  cell.dateLabel.text = "2015/10/25"
+  cell.subtitleLabel.text = "한글날"
+  cell.weatherImage.image = UIImage(name: "sunny")
+  return cell
+}
+```
+
+
+
+**Cell의 높이 지정해주기**
+
+ Cell의 높이를 지정해주기위해 2가지 방법이 있다. 
+
+1. 내용에 상관없이 고정으로 지정
+2. 내용에 따라 Cell의 높이가 Dynamic하게 바뀐다.
+
+
+
+ 첫번째 방법
+
+ 높이를 지정해주기 위해 UIViewDelegate를 채택한 클래스를 delegate로 tableView에 등록해주어야 한다. 그리고 다음과 같은 메소드를 구현한다.
+
+```swift
+class HolidayViewController: UIViewController {
+  @IBOutlet weak var tableView: UITableView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    tableView.delegate = self
+  }
+}
+
+extension HolidayViewController: UITableViewDelegate {
+  // indexPath에 따라 Cell의 높이를 다르게 지정해줄 수 있다.
+  // 다음과 같이할 경우 모든 Cell의 높이가 80으로 고정된다.
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+}
+```
+
+
+
+ 두번째 방법
+
+ 콘텐츠 내용에 따라 유동적으로 지정해줄 수 있다. 최소 Cell의 높이를 지정한 다음 콘텐츠의 양이 많아지면 Cell의 높이가 높아지도록 지정하는 방법이다.
+
+```swift
+class HolidayViewController: UIViewController {
+  @IBOutlet weak var tableView: UITableView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    tableView.rowHeight = UITableView.AutomaticDimension // 콘텐츠 크기에 따라 맞추겠다는 의미이다.
+    tableView.estimatedRowHeight = 100   // 기본 초기값을 설정해준다. 개발자가 대략 생각하는 Height를 넣음
+    tableView.delegate = self
+  }
+}
+
+extension HolidayViewController: UITableViewDelegate {
+func tableView(_ tableView: UITableView, estimatedHeight indexPath: IndexPath) -> CGFloat) {
+  return UITableView.AutomaticDimension
+}
+```
+
+
+
+
+
+**URL 접속 앱 권한 허용 info.plist 수정**
+
+ 처음 URL을 통해 text를 받아올 때, 계속 코드가 맞는데 실행이 되지 않았다. https로 부터 정보를 읽어올 수 없다는 오류가 계속 발생하였다. 앱에서 권한이 얻어지지 않아서 앱자체에서 거부를 하고 있었다. 이를 해결하기 위해 Info.plist의 설정을 바꾸어 주었다.
+
+![screen](./11.png)
+
+ https로 부터 정보를 읽어오기 위해 다음과 같은 설정을 바꾸어준다.
+
+
+
+**실행화면**
+
+<img src="12.png" height="500px"/>
+
+
+
