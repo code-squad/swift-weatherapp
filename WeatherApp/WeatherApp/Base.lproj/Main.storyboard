@@ -193,7 +193,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="yR0-Hd-MkV" customClass="HolidayTableViewCell" customModule="WeatherApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="holidaycustom" rowHeight="80" id="yR0-Hd-MkV" customClass="HolidayTableViewCell" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yR0-Hd-MkV" id="mTW-zN-8uy">
@@ -246,7 +246,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="ZMy-Bb-6fS" id="B6a-7H-taA"/>
-                                            <outlet property="subtitleCell" destination="pmG-t7-z2i" id="vj0-ml-dE8"/>
+                                            <outlet property="subtitleLabel" destination="pmG-t7-z2i" id="vj0-ml-dE8"/>
                                             <outlet property="weatherImageView" destination="vkA-5Z-bBA" id="hXS-2c-r86"/>
                                         </connections>
                                     </tableViewCell>
