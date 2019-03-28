@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        guard let url = URL(string: "http://public.codesquad.kr/jk/weatherapp/customcell.json"),
+            let data = try? Data(contentsOf: url),
+            let jsonData = try? JSONSerialization.jsonObject(with: data) as? Array<Dictionary<String,String>>,
+            let firstViewController = window?.rootViewController as? HolidayViewController else { return true }
+        
+        firstViewController.holidays = Holidays(holidays: jsonData)
+        
         return true
     }
 
