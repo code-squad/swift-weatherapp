@@ -15,7 +15,7 @@ class HolidayViewController: UIViewController {
     
     @IBOutlet weak var holidayTableView: UITableView!
     
-    private var holidays = Holidays()
+    var holidays: Holidays?
     
     private let defaultCell = "defaultCell"
     
@@ -35,7 +35,6 @@ class HolidayViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
 extension HolidayViewController: UITableViewDataSource {
