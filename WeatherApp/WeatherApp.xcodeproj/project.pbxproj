@@ -14,6 +14,7 @@
 		7DCDDE39224B43D800EF6FA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCDDE37224B43D800EF6FA2 /* LaunchScreen.storyboard */; };
 		7DCDDE41224B488E00EF6FA2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCDDE40224B488E00EF6FA2 /* TableViewController.swift */; };
 		7DD7614E224C68A400140A9C /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7614D224C68A400140A9C /* HolidayViewController.swift */; };
+		7DD76150224C6B0800140A9C /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7614F224C6B0800140A9C /* Holiday.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7DCDDE3A224B43D800EF6FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DCDDE40224B488E00EF6FA2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7DD7614D224C68A400140A9C /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
+		7DD7614F224C6B0800140A9C /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				7DCDDE40224B488E00EF6FA2 /* TableViewController.swift */,
 				7DCDDE32224B43D600EF6FA2 /* Main.storyboard */,
 				7DD7614D224C68A400140A9C /* HolidayViewController.swift */,
+				7DD7614F224C6B0800140A9C /* Holiday.swift */,
 				7DCDDE35224B43D800EF6FA2 /* Assets.xcassets */,
 				7DCDDE37224B43D800EF6FA2 /* LaunchScreen.storyboard */,
 				7DCDDE3A224B43D800EF6FA2 /* Info.plist */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DCDDE31224B43D600EF6FA2 /* ViewController.swift in Sources */,
+				7DD76150224C6B0800140A9C /* Holiday.swift in Sources */,
 				7DCDDE41224B488E00EF6FA2 /* TableViewController.swift in Sources */,
 				7DCDDE2F224B43D600EF6FA2 /* AppDelegate.swift in Sources */,
 				7DD7614E224C68A400140A9C /* HolidayViewController.swift in Sources */,

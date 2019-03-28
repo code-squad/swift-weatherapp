@@ -15,6 +15,8 @@ class HolidayViewController: UIViewController {
     
     @IBOutlet weak var holidayTableView: UITableView!
     
+    private var holidays = [Holiday]()
+    
     private let defaultCell = "defaultCell"
     
     override func viewDidLoad() {
@@ -38,10 +40,12 @@ class HolidayViewController: UIViewController {
 
 extension HolidayViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return holidays.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: defaultCell, for: indexPath)
+        
+        return cell
     }
 }
