@@ -19,9 +19,12 @@ class HolidayViewController: UIViewController {
     
     private let holidaycustom = "holidaycustom"
     private let defaultCell = "defaultCell"
+    
     private let date = "date"
     private let subtitle = "subtitle"
     private let image = "image"
+    
+    private let weatherPrefix = "weather-"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,17 +54,13 @@ extension HolidayViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: holidaycustom, for: indexPath)
         
-        
         guard let holiday = self.holidays?[indexPath.row],
             let holidayTableCell = cell as? HolidayTableViewCell else { return cell }
         
         holidayTableCell.dateLabel.text = holiday[date]
         holidayTableCell.subtitleLabel.text = holiday[subtitle]
-        if let imageName = holiday[image],
-            let weatherImage = UIImage(named: imageName) {
-            holidayTableCell.weatherImageView.image = weatherImage
-        } else {
-            holidayTableCell.weatherImageView.backgroundColor = UIColor.gray
+        if let imageName = holiday[image] {
+            holidayTableCell.weatherImageView.image = UIImage(named: weatherPrefix + imageName)
         }
         
         return holidayTableCell
