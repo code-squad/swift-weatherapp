@@ -12,7 +12,7 @@ class HolidayTableViewCell: UITableViewCell {
 
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var subtitleCell: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
