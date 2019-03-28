@@ -193,6 +193,29 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="yR0-Hd-MkV" customClass="HolidayTableViewCell" customModule="WeatherApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yR0-Hd-MkV" id="mTW-zN-8uy">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f36-YC-0c3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="pC1-01-lyi"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="f36-YC-0c3" secondAttribute="trailing" id="2gt-pk-VAj"/>
+                                                <constraint firstItem="f36-YC-0c3" firstAttribute="leading" secondItem="mTW-zN-8uy" secondAttribute="leading" id="8RU-ot-Vyi"/>
+                                                <constraint firstAttribute="bottom" secondItem="f36-YC-0c3" secondAttribute="bottom" id="8c7-qV-VPI"/>
+                                                <constraint firstItem="f36-YC-0c3" firstAttribute="top" secondItem="mTW-zN-8uy" secondAttribute="top" id="Nty-7a-YRu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Hhc-i2-axy" id="pNu-PI-9VH"/>
