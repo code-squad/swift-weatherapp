@@ -14,6 +14,7 @@
 		9DD8BD48224923600039889F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD8BD47224923600039889F /* TableViewController.swift */; };
 		9DFC12F4224A0BB900AF238C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC12F3224A0BB900AF238C /* Weather.swift */; };
 		9DFC12F6224A1A0B00AF238C /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC12F5224A1A0B00AF238C /* HolidayViewController.swift */; };
+		9DFC12FA224C9A3F00AF238C /* HolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC12F9224C9A3F00AF238C /* HolidayTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9DD8BD47224923600039889F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		9DFC12F3224A0BB900AF238C /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		9DFC12F5224A1A0B00AF238C /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
+		9DFC12F9224C9A3F00AF238C /* HolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				9DD8BD47224923600039889F /* TableViewController.swift */,
 				9DFC12F3224A0BB900AF238C /* Weather.swift */,
 				9DFC12F5224A1A0B00AF238C /* HolidayViewController.swift */,
+				9DFC12F9224C9A3F00AF238C /* HolidayTableViewCell.swift */,
 			);
 			path = AddressBookApp;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				9DFC12F4224A0BB900AF238C /* Weather.swift in Sources */,
 				9DD8BD48224923600039889F /* TableViewController.swift in Sources */,
 				9DFC12F6224A1A0B00AF238C /* HolidayViewController.swift in Sources */,
+				9DFC12FA224C9A3F00AF238C /* HolidayTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

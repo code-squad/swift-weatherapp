@@ -55,7 +55,6 @@ extension HolidayViewController: UITableViewDataSource {
         let cell: UITableViewCell
         if let reuseCell = tableView.dequeueReusableCell(withIdentifier: "reuseQueue") { cell = reuseCell }
         else { cell = UITableViewCell(style: .subtitle, reuseIdentifier: "reuseQueue") }
-        
         cell.textLabel?.text = dateEventInformation[indexPath.row]["date"]
         cell.detailTextLabel?.text = dateEventInformation[indexPath.row]["subtitle"]
         return cell
