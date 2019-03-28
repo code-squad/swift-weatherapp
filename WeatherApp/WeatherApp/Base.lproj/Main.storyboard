@@ -202,8 +202,31 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f36-YC-0c3">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vkA-5Z-bBA">
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMy-Bb-6fS">
+                                                            <rect key="frame" x="25" y="7" width="42" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmG-t7-z2i">
+                                                            <rect key="frame" x="349" y="51" width="42" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="vkA-5Z-bBA" firstAttribute="leading" secondItem="f36-YC-0c3" secondAttribute="leading" id="AIl-Yj-OnO"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vkA-5Z-bBA" secondAttribute="trailing" id="D6x-ve-K6d"/>
+                                                        <constraint firstItem="vkA-5Z-bBA" firstAttribute="top" secondItem="f36-YC-0c3" secondAttribute="top" id="NfF-qd-VWx"/>
+                                                        <constraint firstAttribute="bottom" secondItem="vkA-5Z-bBA" secondAttribute="bottom" id="Q6d-Zj-poq"/>
                                                         <constraint firstAttribute="height" constant="80" id="pC1-01-lyi"/>
                                                     </constraints>
                                                 </view>
@@ -215,6 +238,11 @@
                                                 <constraint firstItem="f36-YC-0c3" firstAttribute="top" secondItem="mTW-zN-8uy" secondAttribute="top" id="Nty-7a-YRu"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="ZMy-Bb-6fS" id="B6a-7H-taA"/>
+                                            <outlet property="subtitleCell" destination="pmG-t7-z2i" id="vj0-ml-dE8"/>
+                                            <outlet property="weatherImageView" destination="vkA-5Z-bBA" id="hXS-2c-r86"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

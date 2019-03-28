@@ -10,6 +10,9 @@ import UIKit
 
 class HolidayTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var weatherImageView: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var subtitleCell: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
