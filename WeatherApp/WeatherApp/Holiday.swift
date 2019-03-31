@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Holiday {
-    var date: String
-    var subtitle: String
+struct Holiday: Codable {
+    let date: String
+    let subtitle: String
+    let image: String?
 }

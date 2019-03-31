@@ -10,21 +10,33 @@ import Foundation
 
 struct Holidays {
     
-    private var holidays = [[String: String]]()
+    //MARK: - Properties
+    //MARK: Private
+    
+    private var holidays = [Holiday]()
+    
+    private let urlString = "http://public.codesquad.kr/jk/weatherapp/customcell.json"
+    
+    //MARK: - Methods
+    //MARK: Initialization
     
     init() {
-        guard let url = URL(string: "http://public.codesquad.kr/jk/weatherapp/customcell.json"),
+        guard let url = URL(string: urlString),
             let data = try? Data(contentsOf: url),
-            let newHolidays = try? JSONSerialization.jsonObject(with: data) as? Array<Dictionary<String,String>> else { return }
+            let newHolidays = try? JSONDecoder().decode([Holiday].self, from: data) else { return }
         self.holidays += newHolidays
     }
     
-    subscript(index: Int) -> [String: String]? {
+    //MARK: Subscript
+    
+    subscript(index: Int) -> Holiday? {
         get {
             guard 0 <= index && index < holidays.count else { return nil }
             return holidays[index]
         }
     }
+    
+    //MARK: Instance
     
     func count() -> Int {
         return holidays.count
