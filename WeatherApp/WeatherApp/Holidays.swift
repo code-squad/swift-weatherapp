@@ -10,10 +10,13 @@ import Foundation
 
 struct Holidays {
     
-    private var holidays: [[String: String]]
+    private var holidays = [[String: String]]()
     
-    init(holidays: [[String: String]]) {
-        self.holidays = holidays
+    init() {
+        guard let url = URL(string: "http://public.codesquad.kr/jk/weatherapp/customcell.json"),
+            let data = try? Data(contentsOf: url),
+            let newHolidays = try? JSONSerialization.jsonObject(with: data) as? Array<Dictionary<String,String>> else { return }
+        self.holidays += newHolidays
     }
     
     subscript(index: Int) -> [String: String]? {
