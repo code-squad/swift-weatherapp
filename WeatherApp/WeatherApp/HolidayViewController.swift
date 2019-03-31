@@ -15,7 +15,7 @@ class HolidayViewController: UIViewController {
     
     @IBOutlet weak var holidayTableView: UITableView!
     
-    var holidays: Holidays?
+    private var holidays = Holidays()
     
     private let holidaycustom = "holidaycustom"
     private let defaultCell = "defaultCell"
@@ -32,7 +32,6 @@ class HolidayViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
     /*
      // MARK: - Navigation
      
@@ -47,14 +46,13 @@ class HolidayViewController: UIViewController {
 extension HolidayViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let number = holidays?.count() else { return 0 }
-        return number
+        return holidays.count()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: holidaycustom, for: indexPath)
         
-        guard let holiday = self.holidays?[indexPath.row],
+        guard let holiday = self.holidays[indexPath.row],
             let holidayTableCell = cell as? HolidayTableViewCell else { return cell }
         
         holidayTableCell.dateLabel.text = holiday[date]
