@@ -10,153 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
-        <scene sceneID="RgF-Hz-gwS">
-            <objects>
-                <tableViewController id="PYU-bG-jb5" customClass="TableViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HXF-F7-dMq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <sections>
-                            <tableViewSection id="INr-Vs-nIn">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="FDE-3S-cDf" userLabel="DateTimeCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FDE-3S-cDf" id="kFT-mp-dBc">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K9s-ck-WcY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
-                                                    <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rMS-Hw-t3r">
-                                                            <rect key="frame" x="16" y="8.3333333333333357" width="382" height="64"/>
-                                                            <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4hX-85-IFy">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="32"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017년 12월 25일" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnF-Le-0qu" userLabel="dateLabel">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="191" height="32"/>
-                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오전 11시 40분" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9Z-1V-xuS" userLabel="timeLabel">
-                                                                            <rect key="frame" x="191" y="0.0" width="191" height="32"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="QIG-Wx-1cr"/>
-                                                                    </constraints>
-                                                                </stackView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 이벤트가 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwu-e2-DZw" userLabel="eventLabel">
-                                                                    <rect key="frame" x="0.0" y="32" width="382" height="32"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="e3X-qN-1DL"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="4hX-85-IFy" firstAttribute="height" secondItem="rMS-Hw-t3r" secondAttribute="height" multiplier="0.5" priority="999" id="70j-N3-x1a"/>
-                                                            </constraints>
-                                                        </stackView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="rMS-Hw-t3r" secondAttribute="trailing" constant="16" id="3xr-do-qe7"/>
-                                                        <constraint firstItem="rMS-Hw-t3r" firstAttribute="leading" secondItem="K9s-ck-WcY" secondAttribute="leading" constant="16" id="5IG-ef-Kjb"/>
-                                                        <constraint firstItem="rMS-Hw-t3r" firstAttribute="top" secondItem="K9s-ck-WcY" secondAttribute="top" constant="8" id="bvI-gQ-8aq"/>
-                                                        <constraint firstAttribute="height" constant="80" id="rer-CI-K8G"/>
-                                                        <constraint firstAttribute="bottom" secondItem="rMS-Hw-t3r" secondAttribute="bottom" constant="8" id="tjc-zn-laV"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="K9s-ck-WcY" firstAttribute="leading" secondItem="kFT-mp-dBc" secondAttribute="leading" id="Otg-WP-L7G"/>
-                                                <constraint firstAttribute="bottom" secondItem="K9s-ck-WcY" secondAttribute="bottom" id="VnW-EB-ilp"/>
-                                                <constraint firstItem="K9s-ck-WcY" firstAttribute="top" secondItem="kFT-mp-dBc" secondAttribute="top" id="WMs-hY-6yq"/>
-                                                <constraint firstAttribute="trailing" secondItem="K9s-ck-WcY" secondAttribute="trailing" id="gYn-jc-hNd"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="dyk-9L-a6G" userLabel="WeatherCell">
-                                        <rect key="frame" x="0.0" y="80" width="414" height="200"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dyk-9L-a6G" id="obh-LA-VzH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199.66666666666666"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0X-yJ-Phe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200.33333333333334"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather-sunny" translatesAutoresizingMaskIntoConstraints="NO" id="4ZN-tS-7si">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200.33333333333334"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 날씨는 흐림입니다!?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ch3-i9-3we" userLabel="weatherDescrirption">
-                                                            <rect key="frame" x="16" y="88" width="382" height="24.333333333333329"/>
-                                                            <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpm-Rj-Nia">
-                                                            <rect key="frame" x="376" y="16.333333333333332" width="22" height="21.999999999999996"/>
-                                                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </button>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstItem="ch3-i9-3we" firstAttribute="leading" secondItem="p0X-yJ-Phe" secondAttribute="leading" constant="16" id="4kr-Kh-F9t"/>
-                                                        <constraint firstAttribute="height" constant="200" id="6i3-Hw-Ryb"/>
-                                                        <constraint firstAttribute="trailing" secondItem="4ZN-tS-7si" secondAttribute="trailing" id="8NX-3z-xfy"/>
-                                                        <constraint firstAttribute="trailing" secondItem="ch3-i9-3we" secondAttribute="trailing" constant="16" id="CZF-zY-E27"/>
-                                                        <constraint firstItem="4ZN-tS-7si" firstAttribute="leading" secondItem="p0X-yJ-Phe" secondAttribute="leading" id="Gj0-oz-fka"/>
-                                                        <constraint firstItem="cpm-Rj-Nia" firstAttribute="top" secondItem="p0X-yJ-Phe" secondAttribute="top" constant="16" id="U9x-9U-ZeA"/>
-                                                        <constraint firstItem="ch3-i9-3we" firstAttribute="centerY" secondItem="p0X-yJ-Phe" secondAttribute="centerY" id="fdm-aT-NN3"/>
-                                                        <constraint firstItem="4ZN-tS-7si" firstAttribute="top" secondItem="p0X-yJ-Phe" secondAttribute="top" id="htK-oh-HNo"/>
-                                                        <constraint firstAttribute="trailing" secondItem="cpm-Rj-Nia" secondAttribute="trailing" constant="16" id="qXJ-1a-cjv"/>
-                                                        <constraint firstAttribute="bottom" secondItem="4ZN-tS-7si" secondAttribute="bottom" id="z1C-aM-TdQ"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="p0X-yJ-Phe" secondAttribute="trailing" id="NuV-uS-2bG"/>
-                                                <constraint firstItem="p0X-yJ-Phe" firstAttribute="leading" secondItem="obh-LA-VzH" secondAttribute="leading" id="dWv-a3-DAe"/>
-                                                <constraint firstItem="p0X-yJ-Phe" firstAttribute="top" secondItem="obh-LA-VzH" secondAttribute="top" id="nqM-t7-Uoe"/>
-                                                <constraint firstAttribute="bottom" secondItem="p0X-yJ-Phe" secondAttribute="bottom" id="vy4-RM-QR0"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Yut-0z-Y3H">
-                                        <rect key="frame" x="0.0" y="280" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yut-0z-Y3H" id="pnk-Vc-Kra">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="PYU-bG-jb5" id="XKW-Ll-VyS"/>
-                            <outlet property="delegate" destination="PYU-bG-jb5" id="ho0-VB-WzP"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yAJ-vt-eBY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="901" y="138"/>
-        </scene>
         <!--Holiday View Controller-->
         <scene sceneID="w9L-cD-fTN">
             <objects>
@@ -193,7 +46,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="holidaycustom" rowHeight="80" id="yR0-Hd-MkV" customClass="HolidayTableViewCell" customModule="WeatherApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="holidayCell" rowHeight="80" id="yR0-Hd-MkV" customClass="HolidayTableViewCell" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yR0-Hd-MkV" id="mTW-zN-8uy">
@@ -272,10 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5Y-eG-wkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1685" y="142"/>
+            <point key="canvasLocation" x="1213" y="152"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="weather-sunny" width="200" height="125"/>
-    </resources>
 </document>

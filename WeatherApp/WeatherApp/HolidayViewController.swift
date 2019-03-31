@@ -15,16 +15,15 @@ class HolidayViewController: UIViewController {
     
     @IBOutlet weak var holidayTableView: UITableView!
     
+    //MARK: Private
+    
     private var holidays = Holidays()
     
-    private let holidaycustom = "holidaycustom"
-    private let defaultCell = "defaultCell"
+    private let holidayCell = "holidayCell"
+    private let defaultCell = "defaultCell"    
     
-    private let date = "date"
-    private let subtitle = "subtitle"
-    private let image = "image"
-    
-    private let weatherPrefix = "weather-"
+    //MARK: - Methods
+    //MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,16 +49,12 @@ extension HolidayViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: holidaycustom, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: holidayCell, for: indexPath)
         
         guard let holiday = self.holidays[indexPath.row],
-            let holidayTableCell = cell as? HolidayTableViewCell else { return cell }
+              let holidayTableCell = cell as? HolidayTableViewCell else { return cell }
         
-        holidayTableCell.dateLabel.text = holiday[date]
-        holidayTableCell.subtitleLabel.text = holiday[subtitle]
-        if let imageName = holiday[image] {
-            holidayTableCell.weatherImageView.image = UIImage(named: weatherPrefix + imageName)
-        }
+        holidayTableCell.show(with: holiday)
         
         return holidayTableCell
     }
