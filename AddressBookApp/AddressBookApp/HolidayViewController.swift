@@ -12,28 +12,17 @@ class HolidayViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private var dateEventInformation: [Dictionary<String, String>]!
     
+    private var dateEvent: DateEvent?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        parseJSONData()
+        dateEvent = DateEvent()
+        guard let information = JSONParser.parseJSONData() else { return }
+        dateEvent?.set(information: information)
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
-    func parseJSONData() {
-        let json = getStringFromURL()
-        let jsonData: Data? = json?.data(using: .utf8)
-        guard let data = jsonData else { return }
-        guard let convertedData = try? JSONSerialization.jsonObject(with: data, options: []) as? [Dictionary<String, String>] else { return }
-        dateEventInformation = convertedData
-    }
-    
-    private func getStringFromURL() -> String? {
-        guard let url = URL(string: "http://public.codesquad.kr/jk/weatherapp/customcell.json") else { return nil }
-        guard let content = try? String(contentsOf: url) else { return nil }
-        return content
-    }
-    
 }
 
 extension HolidayViewController: UITableViewDataSource {
