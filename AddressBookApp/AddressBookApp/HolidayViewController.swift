@@ -10,7 +10,6 @@ import UIKit
 
 class HolidayViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    private var dateEventInformation: [Dictionary<String, String>]!
     
     private var dateEvent: DateEvent?
     
@@ -31,21 +30,16 @@ extension HolidayViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dateEventInformation.count
+        return dateEvent?.count() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseQueue", for: indexPath) as! HolidayTableViewCell
-        cell.dateLabel.text = dateEventInformation[indexPath.row]["date"]
-        cell.subtitleLabel.text = dateEventInformation[indexPath.row]["subtitle"]
         
-        let cellImageName = dateEventInformation[indexPath.row]["image"]
-        switch cellImageName {
-        case "sunny": cell.weatherImage.image = UIImage(named: "weather-sunny")
-        case "cloudy": cell.weatherImage.image = UIImage(named: "weather-cloudy")
-        case "snowy": cell.weatherImage.image = UIImage(named: "weather-snowy")
-        case "rainny": cell.weatherImage.image = UIImage(named: "weather-rainny")
-        default: cell.weatherImage.backgroundColor = UIColor.gray
+        dateEvent?.access { information in
+            cell.dateLabel.text = information[indexPath.row]["date"]
+            cell.subtitleLabel.text = information[indexPath.row]["subtitle"]
+            cell.chooseImage(name: information[indexPath.row]["image"])
         }
         return cell
     }
