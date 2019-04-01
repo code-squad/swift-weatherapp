@@ -23,4 +23,14 @@ class HolidayTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func chooseImage(name: String?) {
+        switch name {
+        case "sunny": self.weatherImage.image = UIImage(named: "weather-sunny")
+        case "cloudy": self.weatherImage.image = UIImage(named: "weather-cloudy")
+        case "snowy": self.weatherImage.image = UIImage(named: "weather-snowy")
+        case "rainny": self.weatherImage.image = UIImage(named: "weather-rainny")
+        default: self.weatherImage.backgroundColor = UIColor.gray
+        }
+    }
 }
