@@ -98,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="-271.01449275362319" y="287.77173913043481"/>
         </scene>
-        <!--View Controller-->
+        <!--Holiday View Controller-->
         <scene sceneID="eeR-Z0-2U4">
             <objects>
-                <viewController id="71t-AP-yCG" sceneMemberID="viewController">
+                <viewController id="71t-AP-yCG" customClass="HolidayViewController" customModule="AddressBookApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LeN-bS-6Yp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,7 +111,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="14" textLabel="j44-nb-3b6" detailTextLabel="rpM-YV-6JW" style="IBUITableViewCellStyleSubtitle" id="71I-K7-sjd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="j44-nb-3b6" detailTextLabel="rpM-YV-6JW" style="IBUITableViewCellStyleSubtitle" id="71I-K7-sjd">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="71I-K7-sjd" id="Ro8-SC-is2">
@@ -141,6 +141,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="he0-LF-UDK"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="gOK-hc-mh0" id="q7L-2d-Hra"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQb-zg-vuE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
