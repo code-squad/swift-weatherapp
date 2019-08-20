@@ -9,6 +9,7 @@
 import UIKit
 
 class HolidayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var tableView: UITableView!
     let model = Model()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,8 +29,6 @@ class HolidayViewController: UIViewController, UITableViewDataSource, UITableVie
         
         return cell
     }
-    
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
