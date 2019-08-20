@@ -46,7 +46,6 @@
 		3331EE8A2306FC700051AAA3 = {
 			isa = PBXGroup;
 			children = (
-				33115B16230B95E8007347AB /* HolidayTableViewCell.swift */,
 				3331EE952306FC700051AAA3 /* AddressBookApp */,
 				3331EE942306FC700051AAA3 /* Products */,
 			);
@@ -63,6 +62,7 @@
 		3331EE952306FC700051AAA3 /* AddressBookApp */ = {
 			isa = PBXGroup;
 			children = (
+				33115B16230B95E8007347AB /* HolidayTableViewCell.swift */,
 				3331EE962306FC700051AAA3 /* AppDelegate.swift */,
 				3331EE9A2306FC710051AAA3 /* Main.storyboard */,
 				3331EE9D2306FC730051AAA3 /* Assets.xcassets */,

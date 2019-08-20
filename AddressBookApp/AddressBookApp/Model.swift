@@ -38,4 +38,8 @@ import Foundation
     func makeDetailTextLabel(index: Int, handler: (String) -> ()) {
         handler(json[index][JsonFormat.subtitle.rawValue] ?? "")
     }
+    
+    func makeImage(index: Int, handler: (String) -> ()) {
+        handler(json[index][JsonFormat.image.rawValue] ?? "")
+    }
  }

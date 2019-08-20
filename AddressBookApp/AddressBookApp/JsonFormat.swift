@@ -9,5 +9,5 @@
 import Foundation
 
 enum JsonFormat: String {
-    case date, subtitle
+    case date, subtitle, image
 }
