@@ -10,6 +10,7 @@
 		33115B0F230B82FE007347AB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33115B0E230B82FE007347AB /* Model.swift */; };
 		33115B11230B8572007347AB /* JsonFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33115B10230B8572007347AB /* JsonFormat.swift */; };
 		33115B13230B8605007347AB /* MakeableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33115B12230B8605007347AB /* MakeableCell.swift */; };
+		33115B17230B95E8007347AB /* HolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33115B16230B95E8007347AB /* HolidayTableViewCell.swift */; };
 		3331EE972306FC710051AAA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331EE962306FC700051AAA3 /* AppDelegate.swift */; };
 		3331EE9C2306FC710051AAA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3331EE9A2306FC710051AAA3 /* Main.storyboard */; };
 		3331EE9E2306FC730051AAA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3331EE9D2306FC730051AAA3 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		33115B0E230B82FE007347AB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		33115B10230B8572007347AB /* JsonFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonFormat.swift; sourceTree = "<group>"; };
 		33115B12230B8605007347AB /* MakeableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeableCell.swift; sourceTree = "<group>"; };
+		33115B16230B95E8007347AB /* HolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayTableViewCell.swift; sourceTree = "<group>"; };
 		3331EE932306FC700051AAA3 /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3331EE962306FC700051AAA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3331EE9B2306FC710051AAA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 		3331EE8A2306FC700051AAA3 = {
 			isa = PBXGroup;
 			children = (
+				33115B16230B95E8007347AB /* HolidayTableViewCell.swift */,
 				3331EE952306FC700051AAA3 /* AddressBookApp */,
 				3331EE942306FC700051AAA3 /* Products */,
 			);
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33115B17230B95E8007347AB /* HolidayTableViewCell.swift in Sources */,
 				33115B0F230B82FE007347AB /* Model.swift in Sources */,
 				33115B13230B8605007347AB /* MakeableCell.swift in Sources */,
 				3331EE972306FC710051AAA3 /* AppDelegate.swift in Sources */,
