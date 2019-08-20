@@ -27,10 +27,10 @@ import Foundation
     }
     
     func makeTextLabel(index: Int, handler: (String) -> ()) {
-        handler(json[index][JsonFormat.date.rawValue]!)
+        handler(json[index][JsonFormat.date.rawValue] ?? "")
     }
     
     func makeDetailTextLabel(index: Int, handler: (String) -> ()) {
-        handler(json[index][JsonFormat.subtitle.rawValue]!)
+        handler(json[index][JsonFormat.subtitle.rawValue] ?? "")
     }
  }
