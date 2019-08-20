@@ -31,11 +31,11 @@ import Foundation
         return json.count
     }
     
-    func makeTextLabel(index: Int, handler: (String) -> ()) {
+    func makeDateLabel(index: Int, handler: (String) -> ()) {
         handler(json[index][JsonFormat.date.rawValue] ?? "")
     }
     
-    func makeDetailTextLabel(index: Int, handler: (String) -> ()) {
+    func makeSubtitleLabel(index: Int, handler: (String) -> ()) {
         handler(json[index][JsonFormat.subtitle.rawValue] ?? "")
     }
     

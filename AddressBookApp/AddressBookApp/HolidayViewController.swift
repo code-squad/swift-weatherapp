@@ -20,11 +20,11 @@ class HolidayViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "holidaycustom", for: indexPath) as! HolidayTableViewCell
         
-        model.makeTextLabel(index: indexPath.row, handler: { (value)  in
+        model.makeDateLabel(index: indexPath.row, handler: { (value)  in
             cell.dateLabel.text = value
         })
         
-        model.makeDetailTextLabel(index: indexPath.row, handler: { (value)  in
+        model.makeSubtitleLabel(index: indexPath.row, handler: { (value)  in
             cell.subtitleLabel.text = value
         })
         
