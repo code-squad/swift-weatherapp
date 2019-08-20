@@ -17,7 +17,7 @@ class HolidayViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell", for: indexPath)
         
         model.makeTextLabel(index: indexPath.row, handler: { (value)  in
             cell.textLabel?.text = value
