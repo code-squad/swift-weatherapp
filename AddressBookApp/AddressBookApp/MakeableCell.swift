@@ -12,4 +12,5 @@ protocol MakeableCell {
     func getCellCount() -> Int
     func makeTextLabel(index: Int, handler: (String) -> ())
     func makeDetailTextLabel(index: Int, handler: (String) -> ())
+    func makeImage(index: Int, handler: (String) -> ())
 }

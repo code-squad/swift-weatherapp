@@ -10,6 +10,7 @@ import UIKit
 
 class HolidayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
+    
     let model = Model()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -17,14 +18,18 @@ class HolidayViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "holidaycustom", for: indexPath) as! HolidayTableViewCell
         
         model.makeTextLabel(index: indexPath.row, handler: { (value)  in
-            cell.textLabel?.text = value
+            cell.dateLabel.text = value
         })
         
         model.makeDetailTextLabel(index: indexPath.row, handler: { (value)  in
-            cell.detailTextLabel?.text = value
+            cell.subtitleLabel.text = value
+        })
+        
+        model.makeImage(index: indexPath.row, handler: { (imageName)  in
+            cell.weatherImage.image = UIImage(named: imageName)
         })
         
         return cell
