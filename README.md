@@ -29,3 +29,8 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 }
 ```
 
+
+
+- [ContentMode 학습 정리](./step1/ImageViewContentMode.md)
+
+  
