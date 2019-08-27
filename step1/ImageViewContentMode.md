@@ -2,15 +2,17 @@
 
 
 
-- 이미지뷰는 contentMode 프로퍼티가 존재합니다. 이 프로퍼티는 이미지가 화면에 어떻게 보여질지를 겨라는데 사용됩니다.
+- 이미지뷰는 `contentMode` 프로퍼티가 존재합니다. 이 프로퍼티는 이미지가 화면에 어떻게 보여질지를 결정하는데 사용됩니다.
 
 ```swift
 var contentMode: UIView.ContentMode { get set }
 ```
 
-- 특정 콘텐츠모드로 뷰를 다시 강제로 그리게 하고 싶다면 아래의 함수를 호출하면 됩니다.
+- cf. 특정 콘텐츠모드로 뷰를 다시 강제로 그리게 하고 싶다면 아래의 함수를 호출하면 됩니다.
   -  [`setNeedsDisplay()`](https://developer.apple.com/documentation/uikit/uiview/1622437-setneedsdisplay) 
   -  [`setNeedsDisplay(_:)`](https://developer.apple.com/documentation/uikit/uiview/1622587-setneedsdisplay) 
+
+
 
 
 
@@ -36,8 +38,12 @@ var contentMode: UIView.ContentMode { get set }
 
 ### Redraw
 
-- 결과만 놓고 보면 Scale To Fill과 같음
-- 내부적으로  drawRect를 많이 호출하므로 꼭 필요한 경우가 아니면 사용을 자제
+- 결과만 놓고 보면 Scale To Fill과 같습니다.
+- 내부적으로  drawRect를 많이 호출하므로 꼭 필요한 경우가 아니면 사용을 자제하는 것이 좋습니다.
+
+
+
+
 
 
 
@@ -50,6 +56,10 @@ var contentMode: UIView.ContentMode { get set }
 - 리사이즈 가능한 이미지의 경우 다음의 UIImage의 메서드를 활용해 볼 수 있습니다.
 - [`resizableImage(withCapInsets:resizingMode:)`](https://developer.apple.com/documentation/uikit/uiimage/1624127-resizableimage)
   - 해당 메서드 사용시 이미지를 보통 [`UIView.ContentMode.scaleToFill`](https://developer.apple.com/documentation/uikit/uiview/contentmode/scaletofill) 로 설정하여 이미지 뷰의 경계선에 맞게 이미지를 적절하게 늘이거나 채울 수 있습니다.
+
+
+
+
 
 ### Reference
 
