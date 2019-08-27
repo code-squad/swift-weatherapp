@@ -20,7 +20,7 @@
                         <sections>
                             <tableViewSection id="dF2-UC-qbs">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="Umf-Bp-9wc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DateTimeCell" rowHeight="80" id="Umf-Bp-9wc" customClass="DateTimeCell" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Umf-Bp-9wc" id="tSw-mY-uD0">
@@ -73,13 +73,43 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="K82-Gc-pkd">
-                                        <rect key="frame" x="0.0" y="80" width="414" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" rowHeight="230" id="K82-Gc-pkd" customClass="WeatherCell" customModule="WeatherApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="80" width="414" height="230"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K82-Gc-pkd" id="on1-mR-C9y">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="229.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather-rainny" translatesAutoresizingMaskIntoConstraints="NO" id="wp2-N9-HUE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="229.66666666666666"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWP-5d-VW4" customClass="DetailButton" customModule="WeatherApp" customModuleProvider="target">
+                                                    <rect key="frame" x="372" y="11" width="22" height="22"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 날씨는 흐림 입니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxP-GD-mR2">
+                                                    <rect key="frame" x="30" y="103" width="331.33333333333331" height="24"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wp2-N9-HUE" firstAttribute="width" secondItem="on1-mR-C9y" secondAttribute="width" id="2So-iv-bLE"/>
+                                                <constraint firstItem="wp2-N9-HUE" firstAttribute="top" secondItem="on1-mR-C9y" secondAttribute="top" id="3su-ms-jpY"/>
+                                                <constraint firstItem="wp2-N9-HUE" firstAttribute="leading" secondItem="on1-mR-C9y" secondAttribute="leading" id="43M-wW-qpU"/>
+                                                <constraint firstItem="zxP-GD-mR2" firstAttribute="width" secondItem="on1-mR-C9y" secondAttribute="width" multiplier="0.8" id="9qY-Hj-4Ud"/>
+                                                <constraint firstItem="zxP-GD-mR2" firstAttribute="leading" secondItem="on1-mR-C9y" secondAttribute="leadingMargin" constant="10" id="IXT-pn-aOn"/>
+                                                <constraint firstItem="wp2-N9-HUE" firstAttribute="height" secondItem="on1-mR-C9y" secondAttribute="height" id="Ohd-0y-u1H"/>
+                                                <constraint firstItem="zxP-GD-mR2" firstAttribute="centerY" secondItem="on1-mR-C9y" secondAttribute="centerY" id="nRm-In-DR0"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zxP-GD-mR2" secondAttribute="trailing" constant="-64" id="xSL-IB-7B3"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="WWP-5d-VW4" firstAttribute="top" secondItem="K82-Gc-pkd" secondAttribute="top" constant="11" id="0hP-aJ-E9b"/>
+                                            <constraint firstItem="WWP-5d-VW4" firstAttribute="leading" secondItem="K82-Gc-pkd" secondAttribute="leading" constant="372" id="xm9-28-Tez"/>
+                                            <constraint firstAttribute="bottom" secondItem="WWP-5d-VW4" secondAttribute="bottom" constant="197" id="xrc-Oz-ZTh"/>
+                                            <constraint firstAttribute="trailing" secondItem="WWP-5d-VW4" secondAttribute="trailing" constant="20" id="zka-e6-IdI"/>
+                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -95,4 +125,7 @@
             <point key="canvasLocation" x="166.66666666666669" y="14.673913043478262"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="weather-rainny" width="200" height="125"/>
+    </resources>
 </document>
