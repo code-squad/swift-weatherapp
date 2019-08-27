@@ -28,7 +28,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019년 8월 27일" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="NbM-Yb-7mg">
-                                                    <rect key="frame" x="10" y="0.0" width="192" height="39.333333333333336"/>
+                                                    <rect key="frame" x="10" y="0.0" width="197" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="h3w-HL-JoE"/>
                                                     </constraints>
@@ -37,26 +37,39 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오전 10시 10분" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="zOO-wL-0Oj">
-                                                    <rect key="frame" x="212" y="0.0" width="192" height="39.333333333333336"/>
+                                                    <rect key="frame" x="207" y="0.0" width="197" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="AMJ-m3-w8F"/>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="ey0-RF-4Ns"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 이벤트가 없습니다" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ngN-ke-A9E">
+                                                    <rect key="frame" x="0.0" y="40" width="414" height="39.666666666666657"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Jbi-M5-hoF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="NbM-Yb-7mg" firstAttribute="leading" secondItem="tSw-mY-uD0" secondAttribute="leading" constant="10" id="1DW-6R-msr"/>
+                                                <constraint firstItem="ngN-ke-A9E" firstAttribute="height" secondItem="NbM-Yb-7mg" secondAttribute="height" id="6Zh-08-y69"/>
                                                 <constraint firstItem="NbM-Yb-7mg" firstAttribute="top" secondItem="tSw-mY-uD0" secondAttribute="top" id="7Af-cv-OCc"/>
-                                                <constraint firstItem="zOO-wL-0Oj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NbM-Yb-7mg" secondAttribute="trailing" constant="8" symbolic="YES" id="Br5-6p-CCz"/>
+                                                <constraint firstItem="zOO-wL-0Oj" firstAttribute="leading" secondItem="NbM-Yb-7mg" secondAttribute="trailing" priority="750" id="Br5-6p-CCz"/>
+                                                <constraint firstItem="NbM-Yb-7mg" firstAttribute="height" secondItem="tSw-mY-uD0" secondAttribute="height" multiplier="0.5" id="Dbf-yg-y9X"/>
                                                 <constraint firstItem="zOO-wL-0Oj" firstAttribute="top" secondItem="tSw-mY-uD0" secondAttribute="top" id="QcO-QA-MR0"/>
                                                 <constraint firstItem="zOO-wL-0Oj" firstAttribute="centerY" secondItem="NbM-Yb-7mg" secondAttribute="centerY" id="QuY-a2-2AT"/>
-                                                <constraint firstItem="zOO-wL-0Oj" firstAttribute="width" secondItem="tSw-mY-uD0" secondAttribute="width" multiplier="0.5" constant="-15" id="R83-Ak-Mu4"/>
-                                                <constraint firstItem="NbM-Yb-7mg" firstAttribute="width" secondItem="tSw-mY-uD0" secondAttribute="width" multiplier="0.5" constant="-15" id="eWK-Ue-qlr"/>
+                                                <constraint firstItem="zOO-wL-0Oj" firstAttribute="width" secondItem="tSw-mY-uD0" secondAttribute="width" multiplier="0.5" constant="-10" id="R83-Ak-Mu4"/>
+                                                <constraint firstItem="zOO-wL-0Oj" firstAttribute="height" secondItem="NbM-Yb-7mg" secondAttribute="height" id="VTh-yA-fo8"/>
+                                                <constraint firstItem="ngN-ke-A9E" firstAttribute="centerX" secondItem="tSw-mY-uD0" secondAttribute="centerX" id="X3I-E3-ofr"/>
+                                                <constraint firstItem="ngN-ke-A9E" firstAttribute="top" secondItem="NbM-Yb-7mg" secondAttribute="bottom" id="ZI9-37-SWL"/>
+                                                <constraint firstItem="NbM-Yb-7mg" firstAttribute="width" secondItem="tSw-mY-uD0" secondAttribute="width" multiplier="0.5" constant="-10" id="eWK-Ue-qlr"/>
                                                 <constraint firstAttribute="trailing" secondItem="zOO-wL-0Oj" secondAttribute="trailing" constant="10" id="gkR-OQ-9d2"/>
-                                                <constraint firstAttribute="bottom" secondItem="NbM-Yb-7mg" secondAttribute="bottom" constant="40.5" id="m93-gL-qe8"/>
+                                                <constraint firstItem="ngN-ke-A9E" firstAttribute="width" secondItem="tSw-mY-uD0" secondAttribute="width" id="lDr-yi-jhW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -79,7 +92,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ti-7N-Vmk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="166.66666666666669" y="15.401785714285714"/>
+            <point key="canvasLocation" x="166.66666666666669" y="14.673913043478262"/>
         </scene>
     </scenes>
 </document>
