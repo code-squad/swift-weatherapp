@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C507FED2231531B2002AC86D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C507FED1231531B2002AC86D /* AppDelegate.swift */; };
-		C507FED4231531B2002AC86D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C507FED3231531B2002AC86D /* ViewController.swift */; };
 		C507FED7231531B2002AC86D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C507FED5231531B2002AC86D /* Main.storyboard */; };
 		C507FED9231531B6002AC86D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C507FED8231531B6002AC86D /* Assets.xcassets */; };
 		C507FEDC231531B6002AC86D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C507FEDA231531B6002AC86D /* LaunchScreen.storyboard */; };
@@ -21,7 +20,6 @@
 /* Begin PBXFileReference section */
 		C507FECE231531B2002AC86D /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C507FED1231531B2002AC86D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C507FED3231531B2002AC86D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C507FED6231531B2002AC86D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C507FED8231531B6002AC86D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C507FEDB231531B6002AC86D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				C507FED1231531B2002AC86D /* AppDelegate.swift */,
-				C507FED3231531B2002AC86D /* ViewController.swift */,
 				C507FEE523153773002AC86D /* WeatherCell.swift */,
 				C507FEE72315377F002AC86D /* DateTimeCell.swift */,
 				C507FED5231531B2002AC86D /* Main.storyboard */,
@@ -148,7 +145,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C507FEE623153773002AC86D /* WeatherCell.swift in Sources */,
-				C507FED4231531B2002AC86D /* ViewController.swift in Sources */,
 				C507FEE423153255002AC86D /* WeatherTableViewController.swift in Sources */,
 				C507FED2231531B2002AC86D /* AppDelegate.swift in Sources */,
 				C507FEEA2315391B002AC86D /* DetailButton.swift in Sources */,
@@ -301,6 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5288FA2S2C;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,6 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5288FA2S2C;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
