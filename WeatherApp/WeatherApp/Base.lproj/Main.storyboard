@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableCell" textLabel="0CL-Ht-Iwj" detailTextLabel="6qZ-1j-CJ8" style="IBUITableViewCellStyleSubtitle" id="fQg-s0-l6w">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableCell" textLabel="0CL-Ht-Iwj" detailTextLabel="6qZ-1j-CJ8" style="IBUITableViewCellStyleSubtitle" id="fQg-s0-l6w" customClass="TableCell" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fQg-s0-l6w" id="tIW-2M-HJ8">
@@ -45,8 +45,16 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="subtitle" destination="6qZ-1j-CJ8" id="2T6-es-U5k"/>
+                                            <outlet property="title" destination="0CL-Ht-Iwj" id="rsS-ea-Gos"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="l2c-fI-yCU" id="seJ-ZI-ZlA"/>
+                                    <outlet property="delegate" destination="l2c-fI-yCU" id="QC3-ZT-DAR"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -140,8 +148,9 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather-rainny" translatesAutoresizingMaskIntoConstraints="NO" id="wp2-N9-HUE">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="229.66666666666666"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="DetailButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWP-5d-VW4" customClass="DetailButton" customModule="WeatherApp" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="DetailButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWP-5d-VW4">
                                                     <rect key="frame" x="372" y="11" width="22" height="22"/>
+                                                    <state key="normal" title="detailButton"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 날씨는 흐림 입니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxP-GD-mR2">
                                                     <rect key="frame" x="30" y="103" width="331.33333333333331" height="24"/>
