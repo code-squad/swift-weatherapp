@@ -15,6 +15,7 @@
 		C507FEE623153773002AC86D /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C507FEE523153773002AC86D /* WeatherCell.swift */; };
 		C507FEE82315377F002AC86D /* DateTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C507FEE72315377F002AC86D /* DateTimeCell.swift */; };
 		C507FEEA2315391B002AC86D /* DetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C507FEE92315391B002AC86D /* DetailButton.swift */; };
+		C5CC935E2318EF2E000CA583 /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CC935D2318EF2E000CA583 /* HolidayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C507FEE523153773002AC86D /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		C507FEE72315377F002AC86D /* DateTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeCell.swift; sourceTree = "<group>"; };
 		C507FEE92315391B002AC86D /* DetailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailButton.swift; sourceTree = "<group>"; };
+		C5CC935D2318EF2E000CA583 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +65,10 @@
 				C507FED1231531B2002AC86D /* AppDelegate.swift */,
 				C507FEE523153773002AC86D /* WeatherCell.swift */,
 				C507FEE72315377F002AC86D /* DateTimeCell.swift */,
-				C507FED5231531B2002AC86D /* Main.storyboard */,
 				C507FEE92315391B002AC86D /* DetailButton.swift */,
 				C507FEE323153255002AC86D /* WeatherTableViewController.swift */,
+				C5CC935D2318EF2E000CA583 /* HolidayViewController.swift */,
+				C507FED5231531B2002AC86D /* Main.storyboard */,
 				C507FED8231531B6002AC86D /* Assets.xcassets */,
 				C507FEDA231531B6002AC86D /* LaunchScreen.storyboard */,
 				C507FEDD231531B6002AC86D /* Info.plist */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5CC935E2318EF2E000CA583 /* HolidayViewController.swift in Sources */,
 				C507FEE623153773002AC86D /* WeatherCell.swift in Sources */,
 				C507FEE423153255002AC86D /* WeatherTableViewController.swift in Sources */,
 				C507FED2231531B2002AC86D /* AppDelegate.swift in Sources */,
