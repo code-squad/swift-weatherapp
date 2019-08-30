@@ -33,4 +33,25 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 
 - [ContentMode 학습 정리](./step1/ImageViewContentMode.md)
 
+
+
+
+
+
+
+
+## STEP 2
+
+
+
+### 결과화면
+
+<img src="./images/step2/result.png" width="300px">
+
+
+
+### 학습정리
+
+- [학습정리내용](./step2/studies_TableViewController_TableView_DataSource.md)
+
   
