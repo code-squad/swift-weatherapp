@@ -31,8 +31,8 @@ extension HolidayViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell  = tableView.dequeueReusableCell(withIdentifier: "TableCell") as? TableCell else {
-            return TableCell()
+        guard let cell  = tableView.dequeueReusableCell(withIdentifier: "subtitleCell") as? SubtitleCell else {
+            return SubtitleCell()
         }
         let format = { (date: String, subtitle: String ) in
             cell.title.text = date
