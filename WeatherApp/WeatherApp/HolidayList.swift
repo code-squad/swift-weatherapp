@@ -39,10 +39,10 @@ struct HolidayList {
         }
         for holiday in holidays {
             var dictionaryElement = [String: String]()
-            guard var date = holiday[KeyInfo.date.rawValue] as? String else {
+            guard let date = holiday[KeyInfo.date.rawValue] as? String else {
                 continue
             }
-            guard var subtitle = holiday[KeyInfo.subtitle.rawValue] as? String else {
+            guard let subtitle = holiday[KeyInfo.subtitle.rawValue] as? String else {
                 continue
             }
             dictionaryElement.updateValue(date, forKey: KeyInfo.date.rawValue)
