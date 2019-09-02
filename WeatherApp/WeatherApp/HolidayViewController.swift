@@ -31,7 +31,7 @@ extension HolidayViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell  = tableView.dequeueReusableCell(withIdentifier: "HolidayCustomCell") as? HolidayTableViewCell else {
+        guard let cell  = tableView.dequeueReusableCell(withIdentifier: ReusableCellInfo.holidayCustomCell.rawValue) as? HolidayTableViewCell else {
             return HolidayTableViewCell()
         }
         cell.backgroundView?.clearsContextBeforeDrawing = true
