@@ -12,4 +12,11 @@ class HolidayTableViewCell: UITableViewCell {
  
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        dateLabel.text = nil
+        subtitleLabel.text = nil
+        self.backgroundView = nil
+    }
 }
