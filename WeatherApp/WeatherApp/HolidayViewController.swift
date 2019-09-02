@@ -31,14 +31,16 @@ extension HolidayViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell  = tableView.dequeueReusableCell(withIdentifier: "subtitleCell") as? SubtitleCell else {
-            return SubtitleCell()
+        guard let cell  = tableView.dequeueReusableCell(withIdentifier: "HolidayCustomCell") as? HolidayTableViewCell else {
+            
+            return HolidayTableViewCell()
         }
         let format = { (date: String, subtitle: String ) in
-            cell.title.text = date
-            cell.subtitle.text = subtitle
+            cell.dateLabel.text = date
+            cell.subtitleLabel.text = subtitle
         }
         holidayList.receiveTableViewContentFormat(format: format, rowAt: indexPath.row)
+        cell.backgroundView = UIImageView.init(image: UIImage.init(named: "weather-rainny.png"))
 
         
         return cell
