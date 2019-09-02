@@ -11,5 +11,6 @@ import Foundation
 enum KeyInfo: String {
     case date = "date"
     case subtitle = "subtitle"
+    case image = "image"
     
 }
