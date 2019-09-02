@@ -18,3 +18,8 @@ enum ImageInfo: String {
     case suffixPngExtension = ".png"
     case prefixWeather = "weather-"
 }
+
+enum ReusableCellInfo: String {
+    case holidayCustomCell = "HolidayCustomCell"
+    case subtitleCell = "subtitleCell"
+}
