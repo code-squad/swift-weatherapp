@@ -41,6 +41,7 @@ extension HolidayViewController: UITableViewDataSource {
         }
         holidayList.receiveTableViewContentFormat(format: format, rowAt: indexPath.row)
         cell.backgroundView = UIImageView.init(image: UIImage.init(named: "weather-rainny.png"))
+        cell.backgroundView?.contentMode = .scaleAspectFill
 
         
         return cell

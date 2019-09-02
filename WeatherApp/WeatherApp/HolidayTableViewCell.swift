@@ -10,7 +10,6 @@ import UIKit
 
 class HolidayTableViewCell: UITableViewCell {
  
-//    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
 }
