@@ -17,7 +17,7 @@
 		C5B6CDFB231CF93C00EDD14A /* HolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6CDFA231CF93C00EDD14A /* HolidayTableViewCell.swift */; };
 		C5CC935E2318EF2E000CA583 /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CC935D2318EF2E000CA583 /* HolidayViewController.swift */; };
 		C5CC936023190F07000CA583 /* SubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CC935F23190F07000CA583 /* SubtitleCell.swift */; };
-		C5CC93642319544C000CA583 /* keyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CC93632319544B000CA583 /* keyInfo.swift */; };
+		C5CC93642319544C000CA583 /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CC93632319544B000CA583 /* WeatherEnums.swift */; };
 		C5CC9366231A33FA000CA583 /* HolidayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CC9365231A33FA000CA583 /* HolidayList.swift */; };
 		C5CC937F231A3AC3000CA583 /* HolidayJsonDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CC937E231A3AC3000CA583 /* HolidayJsonDTO.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +35,7 @@
 		C5B6CDFA231CF93C00EDD14A /* HolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayTableViewCell.swift; sourceTree = "<group>"; };
 		C5CC935D2318EF2E000CA583 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 		C5CC935F23190F07000CA583 /* SubtitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleCell.swift; sourceTree = "<group>"; };
-		C5CC93632319544B000CA583 /* keyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyInfo.swift; sourceTree = "<group>"; };
+		C5CC93632319544B000CA583 /* WeatherEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEnums.swift; sourceTree = "<group>"; };
 		C5CC9365231A33FA000CA583 /* HolidayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayList.swift; sourceTree = "<group>"; };
 		C5CC937E231A3AC3000CA583 /* HolidayJsonDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HolidayJsonDTO.swift; path = ../HolidayJsonDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,7 +74,7 @@
 				C507FEE523153773002AC86D /* WeatherCell.swift */,
 				C5CC935F23190F07000CA583 /* SubtitleCell.swift */,
 				C507FEE72315377F002AC86D /* DateTimeCell.swift */,
-				C5CC93632319544B000CA583 /* keyInfo.swift */,
+				C5CC93632319544B000CA583 /* WeatherEnums.swift */,
 				C507FEE323153255002AC86D /* WeatherTableViewController.swift */,
 				C5CC935D2318EF2E000CA583 /* HolidayViewController.swift */,
 				C5B6CDFA231CF93C00EDD14A /* HolidayTableViewCell.swift */,
@@ -165,7 +165,7 @@
 				C507FEE623153773002AC86D /* WeatherCell.swift in Sources */,
 				C5B6CDFB231CF93C00EDD14A /* HolidayTableViewCell.swift in Sources */,
 				C507FEE423153255002AC86D /* WeatherTableViewController.swift in Sources */,
-				C5CC93642319544C000CA583 /* keyInfo.swift in Sources */,
+				C5CC93642319544C000CA583 /* WeatherEnums.swift in Sources */,
 				C507FED2231531B2002AC86D /* AppDelegate.swift in Sources */,
 				C5CC937F231A3AC3000CA583 /* HolidayJsonDTO.swift in Sources */,
 				C507FEE82315377F002AC86D /* DateTimeCell.swift in Sources */,
