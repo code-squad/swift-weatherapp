@@ -35,13 +35,32 @@ struct HolidayList {
         }
         var subtitle = ""
         var date = ""
+        var image = ""
         var dictionaryElement = [String: String]()
         for holiday in holidays {
+            guard holiday[KeyInfo.date.rawValue] != nil else {
+                continue
+            }
+            guard holiday[KeyInfo.subtitle.rawValue] != nil else {
+                continue
+            }
             date = holiday[KeyInfo.date.rawValue] as! String
             subtitle = holiday[KeyInfo.subtitle.rawValue] as! String
             dictionaryElement.updateValue(date, forKey: KeyInfo.date.rawValue)
             dictionaryElement.updateValue(subtitle, forKey: KeyInfo.subtitle.rawValue)
+            
+            if checkNilForImage(holiday) {
+                image = holiday[KeyInfo.image.rawValue] as! String
+                dictionaryElement.updateValue(image, forKey: KeyInfo.image.rawValue)
+            }
             holidayInfoDictionaryArray.append(dictionaryElement)
         }
+    }
+    
+    private func checkNilForImage(_ holiday: [String: Any]) -> Bool {
+        guard holiday[KeyInfo.image.rawValue] != nil else {
+            return false
+        }
+        return true
     }
 }
