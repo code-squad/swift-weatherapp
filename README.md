@@ -76,17 +76,17 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 
 #### 학습거리
 
-- 테이블뷰에서 자동으로 결정하는게 아니라 강제로 셀 높이를 지정하는 방법
+- 테이블뷰에서 자동으로 결정하는게 아니라 **강제로 셀 높이를 지정**하는 방법
 
   - 스토리보드의 Size Inspector에서 Table View Cell의 Row Height를 지정하거나, 
   - 코드 프로그래밍 시에는 tableView의 Cell 컨텐츠를 입히는 **func** **tableView**( _ **tableView**: UITableView, cellForRowAt **indexPath**: IndexPath) -> UITableViewCell  등에서 `tableView.rowHeight` 를 고정값으로 지정하면 됩니다.
 
-- 셀 id별로 재사용하는 방식
+- **셀 id별로 재사용하는 방식**
 
   - tableView의 `dequeueReusableCell` 메서드를 활용하여 `withIdentifier:` 값으로 TableViewCell의 Identifier를 집어넣으면 테이블 뷰 렌더링 과정에서 해당 셀을 재사용하는 것이 가능합니다. 
   - 스토리보드에서 셀의 Id값을 지정하였다면 <u>Attribute Inspector의 **Identifier**</u> 에서 설정 및 확인 가능합니다. 
 
-- 재 사용시 유의사항
+- **재 사용시 유의사항**
 
   - 값을 선택적으로 받는 경우가 존재한다면 셀의 기존 설정값을 지우고 다시 그리는 작업이 필요합니다. 
 
@@ -109,14 +109,39 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 
     
 
-- 커스텀 셀 사용시 주의사항
+- **커스텀 셀 사용시 주의사항**
   - 반드시 재사용가능한 셀을 담은 큐에 그것이 존재하는지 묻는 과정에서 `unwrapping` 과 ` type casting`이 필요합니다. 
   - cell의 identifier와 cell 클래스 명은 다를 수 있습니다. 
-  - 서로 다른 커스텀 셀을 한 테이블의 한 섹션에 나타내기 위해서는 prototype cells의 개수를 조정해야 함
+  - 서로 다른 커스텀 셀을 한 테이블의 한 섹션에 나타내기 위해서는 prototype cells의 개수를 조정해야 합니다.
 
 
 
+### 개발 모드에서 http 통신을 위한 설정 방식
 
+- App Transport Security Policy(a.k.a ATS Policy ; 응용프로그램과 웹 서비스간의 안전한 연결을 위한 정책)에 의해 iOS는 기본적으로 URL을 통해 https가 아닌 http 프로토콜에 직접적으로 통신하는 것을 금지하고 있습니다.
+
+- 개발 과정에서 부득이하게 테스트해야할 때, Info.plist를 수정하여 이를 느슨하게 만들 수 있습니다.
+
+- NSAppTransportSecurity 에서 **`NSAllowsArbitraryLoads`** 를 통해 **1) 전체 HTTP 를 허용하는 방법**과 
+
+- **`NSExceptionDomains`** 를 설정하여 2) **특정 도메인에 대해서만 허용하는 방법**이 존재합니다.
+
+  NSAppTransportSecurity (Dictionary)
+
+  - NSExceptionDomains (Dictionary)
+
+    - NSAllowsArbitraryLoads (Bool)
+
+    - <domain-name-for-exception-as-string> (Dictionary)
+
+    - - NSExceptionMinimumTLSVersion (String)
+      - NSExceptionRequiresForwardSecrecy (Bool)
+      - NSExceptionAllowsInsecureHTTPLoads (Bool)
+      - NSRequiresCertificateTransparency (Bool)
+      - NSIncludesSubdomains (Bool)
+      - NSThirdPartyExceptionMinimumTLSVersion (String)
+      - NSThirdPartyExceptionRequiresForwardSecrecy (Bool)
+      - NSThirdPartyExceptionAllowsInsecureHTTPLoads (Bool)
 
 
 
@@ -125,3 +150,11 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 https://medium.com/@stasost/ios-how-to-build-a-table-view-with-multiple-cell-types-2df91a206429
 
 https://stackoverflow.com/questions/30774671/uitableview-with-more-than-one-custom-cells-with-swift
+
+http://ste.vn/2015/06/10/configuring-app-transport-security-ios-9-osx-10-11/
+
+https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html
+
+[https://blowmj.tistory.com/entry/iOS-iOS9-App-Transport-Security-설정법](https://blowmj.tistory.com/entry/iOS-iOS9-App-Transport-Security-설정법)
+
+https://littleshark.tistory.com/1
