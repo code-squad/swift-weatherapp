@@ -32,19 +32,26 @@ extension HolidayViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell  = tableView.dequeueReusableCell(withIdentifier: "HolidayCustomCell") as? HolidayTableViewCell else {
-            
             return HolidayTableViewCell()
         }
-        let format = { (date: String, subtitle: String ) in
+        cell.backgroundView?.clearsContextBeforeDrawing = true
+        let format = { (date: String, subtitle: String, image: String? ) in
             cell.dateLabel.text = date
             cell.subtitleLabel.text = subtitle
+            if let imageName = image {
+                let imageAssetName = self.buildImageAssetName(imageName)
+                cell.backgroundView = UIImageView.init(image: UIImage.init(named: imageAssetName))
+                cell.backgroundView?.contentMode = .scaleAspectFill
+            }else {
+                cell.backgroundColor = .gray
+            }
         }
         holidayList.receiveTableViewContentFormat(format: format, rowAt: indexPath.row)
-        cell.backgroundView = UIImageView.init(image: UIImage.init(named: "weather-rainny.png"))
-        cell.backgroundView?.contentMode = .scaleAspectFill
-
-        
         return cell
+    }
+    
+    private func buildImageAssetName(_ info: String) -> String {
+        return "\(ImageInfo.prefixWeather.rawValue)\(info)\(ImageInfo.suffixPngExtension.rawValue)"
     }
 }
 

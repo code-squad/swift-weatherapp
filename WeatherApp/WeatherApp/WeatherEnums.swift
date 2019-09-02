@@ -12,5 +12,9 @@ enum KeyInfo: String {
     case date = "date"
     case subtitle = "subtitle"
     case image = "image"
-    
+}
+
+enum ImageInfo: String {
+    case suffixPngExtension = ".png"
+    case prefixWeather = "weather-"
 }
