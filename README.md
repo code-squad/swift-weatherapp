@@ -158,3 +158,79 @@ https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlis
 [https://blowmj.tistory.com/entry/iOS-iOS9-App-Transport-Security-설정법](https://blowmj.tistory.com/entry/iOS-iOS9-App-Transport-Security-설정법)
 
 https://littleshark.tistory.com/1
+
+
+
+
+
+## 개선 작업 중 추가로 알게 된 것들 … 매우 중요!!
+
+#### 1) window hierarchy issue로 alert창이 안뜨는 경우 - no alert
+
+- AlertController를 불러오는 동작이 viewDidLoad에서 실행되는 경우, window의 hierarchy가 형성되지 않았기 때문에 정상적으로 alert 창을 띄우지 못하게 됩니다.
+
+- tableView의 아래 메서드는 viewDidLoad 후에 viewDidAppear 이전에 호출된다. 따라서 이 부분에서 (외부에서 주입받거나 viewDidApper에서 생성하는) 모델의 값을 참조하려고 하면 `nil 체크`를 해줘야 합니다.
+
+  ```swift
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+  ```
+
+  
+
+  https://stackoverflow.com/questions/11862883/attempt-to-present-uiviewcontroller-on-uiviewcontroller-whose-view-is-not-in-the 
+
+
+
+#### 2) appDelegate의 applicaiton 메서드에서 VC로 모델 주입하는 경우 - no alert
+
+- 역시나 ***메서드의 호출 시점의 차이*** 로 발생하는 문제점입니다.
+
+- 뷰컨트롤러의 `이니셜라이저` (임의로 개발자가 생성 못함)가 시스템 내부적으로 호출된 이후, AppDelegate의 `application` **메서드의 실행이 viewDidLoad 보다 우선해서 작동**하기때문에, **NotificationCenter의 옵저버 등록 이전에 post를 보내는 구조가 되어버립니다**. 따라서 alert창이 정상적으로 나타나지 않습니다. 
+
+- 아래는 일부 메서드 호출 시점을 살펴본 디버거 메시지 입니다. 
+
+  ```tex
+  application(_:didFinishLaunchingWithOptions:)
+  receiveJsonData()													/// < application 메서드에서 주입하는 경우
+  "The file “customce” couldn’t be opened." /// < json 데이터 수신 에러 description
+  viewDidLoad()															/// < NotificationCenter에 옵저버가 등록되는 시점
+  tableView(_:numberOfRowsInSection:)
+  tableView(_:numberOfRowsInSection:)				/// < model로부터 참고하는 시점
+  tableView(_:numberOfRowsInSection:)
+  tableView(_:numberOfRowsInSection:)
+  viewDidAppear(_:)										/// < Notification에 post하거나 모델을 생성하기에 적당한 시점
+  applicationDidBecomeActive(_:)
+  ```
+
+  
+
+- 내부의 아카이빙 데이터를 로드할 때는 application 메서드 호출 시점에 로드를 해도 무방합니다. 
+
+- 다만 **일반적으로 외부 네트워크를 통해 view의 Data를 load 하는 경우** 에는  `viewDidAppear 메서드` 나 `lazy` 프로퍼티를 통해 **viewDidLoad() 호출 후(옵저버등록 완료 후)에 호출** 하도록 시점을 조정하는 것이 바람직 하다고 판단됩니다.
+
+
+
+### 3) `연결 취소` 시 앱을 background로 돌리기
+
+-  네트워크/클라이언트 오류로 앱의 alert 창을 띄웠을 때, 재시도 하지 않고 앱을 background 상태로 돌리기 위해서는 `UIAlertAction` 의 **handler** 에 다음을 호출해 주면 됩니다.
+
+  ```swift
+  UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
+  ```
+
+  ```swift
+  ///ex
+  private func buildDefaultExitAction() -> UIAlertAction {
+  		let defaultExitAction = UIAlertAction.init(title: ButtonMessage.exit.description, 
+                                                 style: .destructive) 
+    { (exit: UIAlertAction) in
+  				if exit.isEnabled{
+  						UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
+  				}
+  		}
+  		return defaultExitAction
+  }
+  ```
+
+  
+
