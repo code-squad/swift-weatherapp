@@ -10,19 +10,43 @@ import Foundation
 
 struct HolidayJsonDTO {
     private var data: Data = Data.init()
-    init(){
+    
+    static func receiveCorrectData() -> Data? {
         let holidayURL = URL.init(string: "http://public.codesquad.kr/jk/weatherapp/customcell.json")!
         do {
             let holidayDataString = try String(contentsOf: holidayURL, encoding: .utf8)
             guard let jsonData = holidayDataString.data(using: .utf8) else {
-                return
+                return nil
             }
-            self.data = jsonData
+            return jsonData
         }catch {
+            
+            let result = ["result" : error ]
+            NotificationCenter.default.post(name: .networkError, object: nil, userInfo: result)
         }
+        return nil
+    }
+    
+    static func receiveJsonData() -> Data?{
+        let holidayURL = URL.init(string: "http://public.codesquad.kr/jk/weatherapp/customce")!
+        do {
+            let holidayDataString = try String(contentsOf: holidayURL, encoding: .utf8)
+            guard let jsonData = holidayDataString.data(using: .utf8) else {
+                return nil
+            }
+            return jsonData
+        }catch {
+            let result = ["result" : error ]
+            NotificationCenter.default.post(name: .networkError, object: nil, userInfo: result)
+        }
+        return nil
     }
     
     var initiateHolidayData: Data {
         return self.data
     }
+}
+
+extension Notification.Name {
+    static var networkError = Notification.Name(rawValue: "networkError")
 }
