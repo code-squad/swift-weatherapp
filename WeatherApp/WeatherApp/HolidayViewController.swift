@@ -87,7 +87,7 @@ extension HolidayViewController: UITableViewDataSource {
             return HolidayTableViewCell()
         }
         cell.backgroundView?.clearsContextBeforeDrawing = true
-        holidayList.receiveTableViewContentFormat(format: cell.tableViewContentFormat, rowAt: indexPath.row)
+        holidayList.receiveTableViewContentFormat(format: cell.buildTableViewContentFormat, rowAt: indexPath.row)
         return cell
     }
 }
