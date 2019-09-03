@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PVm-Xr-v7O">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="subtitleCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="subtitleCell" textLabel="0CL-Ht-Iwj" detailTextLabel="6qZ-1j-CJ8" style="IBUITableViewCellStyleSubtitle" id="fQg-s0-l6w" customClass="SubtitleCell" customModule="WeatherApp" customModuleProvider="target">
@@ -96,7 +96,7 @@
                             <constraint firstItem="PVm-Xr-v7O" firstAttribute="width" secondItem="LOn-hf-33K" secondAttribute="width" id="BrJ-x9-kri"/>
                             <constraint firstItem="PVm-Xr-v7O" firstAttribute="top" secondItem="LOn-hf-33K" secondAttribute="top" constant="-20" id="TTn-ZJ-g87"/>
                             <constraint firstItem="PVm-Xr-v7O" firstAttribute="leading" secondItem="LOn-hf-33K" secondAttribute="leading" id="nsy-aP-xee"/>
-                            <constraint firstItem="PVm-Xr-v7O" firstAttribute="height" secondItem="LOn-hf-33K" secondAttribute="height" id="ukW-GO-k3B"/>
+                            <constraint firstItem="PVm-Xr-v7O" firstAttribute="height" secondItem="LOn-hf-33K" secondAttribute="height" constant="20" id="ukW-GO-k3B"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LOn-hf-33K"/>
                     </view>
