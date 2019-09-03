@@ -14,9 +14,9 @@ struct HolidayJsonDTO {
     static func receiveJsonData(_ flag: Bool) -> Data?{
         var holidayURL: URL
         if flag {
-            holidayURL = URL.init(string: "http://public.codesquad.kr/jk/weatherapp/customcell.json")!
+            holidayURL = URL.init(string: URLInfo.correctURL.rawValue)!
         }else {
-            holidayURL = URL.init(string: "http://public.codesquad.kr/jk/weatherapp/customce")!
+            holidayURL = URL.init(string: URLInfo.wrongURL.rawValue)!
         }
         do {
             let holidayDataString = try String(contentsOf: holidayURL, encoding: .utf8)
@@ -25,7 +25,7 @@ struct HolidayJsonDTO {
             }
             return jsonData
         }catch {
-            let result = ["result" : error ]
+            let result = [ URLInfo.wrongResult.rawValue : error ]
             NotificationCenter.default.post(name: .networkError, object: nil, userInfo: result)
         }
         return nil

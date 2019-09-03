@@ -36,3 +36,9 @@ enum ButtonMessage: String, CustomStringConvertible {
         return self.rawValue
     }
 }
+
+enum URLInfo: String {
+    case correctURL = "http://public.codesquad.kr/jk/weatherapp/customcell.json"
+    case wrongURL = "http://public.codesquad.kr/jk/weatherapp/customce"
+    case wrongResult = "result"
+}
