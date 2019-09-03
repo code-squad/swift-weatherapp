@@ -74,6 +74,16 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 
 
 
+
+
+### 개선 후 결과화면 
+
+<img src = "./images/step3/result-errorHandle.gif" width="300px">
+
+- 초기에 잘못된 경로의 주소로 데이터 로드를 시도하고, 예외 처리과정에서 재시도 시 다시 데이터를 읽어오는 과정 추가.
+
+
+
 #### 학습거리
 
 - 테이블뷰에서 자동으로 결정하는게 아니라 **강제로 셀 높이를 지정**하는 방법
