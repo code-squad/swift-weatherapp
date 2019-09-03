@@ -84,7 +84,11 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 
 
 
-#### 학습거리
+-----
+
+
+
+### 학습거리
 
 - 테이블뷰에서 자동으로 결정하는게 아니라 **강제로 셀 높이를 지정**하는 방법
 
@@ -123,6 +127,10 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
   - 반드시 재사용가능한 셀을 담은 큐에 그것이 존재하는지 묻는 과정에서 `unwrapping` 과 ` type casting`이 필요합니다. 
   - cell의 identifier와 cell 클래스 명은 다를 수 있습니다. 
   - 서로 다른 커스텀 셀을 한 테이블의 한 섹션에 나타내기 위해서는 prototype cells의 개수를 조정해야 합니다.
+
+
+
+-----
 
 
 
@@ -171,6 +179,8 @@ https://littleshark.tistory.com/1
 
 
 
+----
+
 
 
 ## 개선 작업 중 추가로 알게 된 것들 … 매우 중요!!
@@ -201,14 +211,14 @@ https://littleshark.tistory.com/1
 
   ```tex
   application(_:didFinishLaunchingWithOptions:)
-  receiveJsonData()													/// < application 메서드에서 주입하는 경우
+  receiveJsonData()		/// < application 메서드에서 주입하는 경우
   "The file “customce” couldn’t be opened." /// < json 데이터 수신 에러 description
-  viewDidLoad()															/// < NotificationCenter에 옵저버가 등록되는 시점
+  viewDidLoad()		/// < NotificationCenter에 옵저버가 등록되는 시점
   tableView(_:numberOfRowsInSection:)
-  tableView(_:numberOfRowsInSection:)				/// < model로부터 참고하는 시점
+  tableView(_:numberOfRowsInSection:)	/// < model로부터 참고하는 시점
   tableView(_:numberOfRowsInSection:)
   tableView(_:numberOfRowsInSection:)
-  viewDidAppear(_:)										/// < Notification에 post하거나 모델을 생성하기에 적당한 시점
+  viewDidAppear(_:)	/// < Notification에 post하거나 모델을 생성하기에 적당한 시점
   applicationDidBecomeActive(_:)
   ```
 
@@ -231,14 +241,13 @@ https://littleshark.tistory.com/1
   ```swift
   ///ex
   private func buildDefaultExitAction() -> UIAlertAction {
-  		let defaultExitAction = UIAlertAction.init(title: ButtonMessage.exit.description, 
-                                                 style: .destructive) 
-    { (exit: UIAlertAction) in
-  				if exit.isEnabled{
-  						UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
-  				}
+  	let defaultExitAction = UIAlertAction.init(title: ButtonMessage.exit.description, 
+                                               style: .destructive) { (exit: UIAlertAction) in
+  		if exit.isEnabled {
+  			UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
   		}
-  		return defaultExitAction
+  	}
+  	return defaultExitAction
   }
   ```
 
