@@ -10,17 +10,17 @@ import Foundation
 
 
 struct HolidayList {
-    private var holidayInfoDictionaryArray = [[String: String]]()
-    
+    private var holidays = [Holiday]()
+
     func receiveTableViewCountFormat(format: (Int) -> Int) -> Int {
-        return format(holidayInfoDictionaryArray.count)
+        return format(holidays.count)
     }
     
     func receiveTableViewContentFormat( format: (_ date: String, _ subtitle: String, _ image: String?) -> Void, rowAt: Int) {
-        guard let date = holidayInfoDictionaryArray[rowAt][KeyInfo.date.rawValue]
-            else { return }
-        guard let subtitle = holidayInfoDictionaryArray[rowAt][KeyInfo.subtitle.rawValue] else { return }
-        guard let image = holidayInfoDictionaryArray[rowAt][KeyInfo.image.rawValue] else {
+        let date = holidays[rowAt].date
+        
+        let subtitle = holidays[rowAt].subtitle
+        guard let image = holidays[rowAt].image else {
             format(date, subtitle, nil)
             return
         }
@@ -38,25 +38,25 @@ struct HolidayList {
     }
     
     private mutating func convertJsonToDictionaryArray(_ data: Data) {
-        guard let holidays = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+        guard let holidayList = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
             as? [[String: Any]] else {
                 return
         }
-        for holiday in holidays {
-            var dictionaryElement = [String: String]()
+        for holiday in holidayList {
             guard let date = holiday[KeyInfo.date.rawValue] as? String else {
                 continue
             }
             guard let subtitle = holiday[KeyInfo.subtitle.rawValue] as? String else {
                 continue
             }
-            dictionaryElement.updateValue(date, forKey: KeyInfo.date.rawValue)
-            dictionaryElement.updateValue(subtitle, forKey: KeyInfo.subtitle.rawValue)
             if checkNilForImage(holiday) {
                 let image = holiday[KeyInfo.image.rawValue] as! String
-                dictionaryElement.updateValue(image, forKey: KeyInfo.image.rawValue)
+                let holidayElement = Holiday.init(date: date, subtitle: subtitle, image: image)
+                holidays.append(holidayElement)
+            }else {
+                let holidayElement = Holiday.init(date: date, subtitle: subtitle, image: nil)
+                holidays.append(holidayElement)
             }
-            holidayInfoDictionaryArray.append(dictionaryElement)
         }
     }
     
