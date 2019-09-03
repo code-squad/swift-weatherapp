@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         guard let vc = window?.rootViewController as? HolidayViewController else { return }
-        vc.configureModel(holidayList: HolidayList.init())
+        vc.configureModel(holidayList: HolidayList.init(true))
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
