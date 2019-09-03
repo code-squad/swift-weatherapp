@@ -26,13 +26,18 @@ struct HolidayList {
         }
         format(date, subtitle, image)
     }
-    
-    init(){
-        let holidayJsonData = HolidayJsonDTO().initiateHolidayData
-        convertJsonToDictionaryArray(holidayJsonData)
+
+    init(_ flag: Bool = false){
+        if flag {
+            guard let holidayJsonData = HolidayJsonDTO.receiveCorrectData()else { return }
+            convertJsonToDictionaryArray(holidayJsonData)
+        }else {
+            guard let holidayJsonData = HolidayJsonDTO.receiveJsonData() else { return }
+            convertJsonToDictionaryArray(holidayJsonData)
+        }
     }
     
-    private mutating func convertJsonToDictionaryArray(_ data: Data)  {
+    private mutating func convertJsonToDictionaryArray(_ data: Data) {
         guard let holidays = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
             as? [[String: Any]] else {
                 return
@@ -56,9 +61,6 @@ struct HolidayList {
     }
     
     private func checkNilForImage(_ holiday: [String: Any]) -> Bool {
-        guard holiday[KeyInfo.image.rawValue] != nil else {
-            return false
-        }
-        return true
+        return holiday[KeyInfo.image.rawValue] != nil
     }
 }
