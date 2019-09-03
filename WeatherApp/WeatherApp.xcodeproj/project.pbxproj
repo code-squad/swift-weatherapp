@@ -15,6 +15,7 @@
 		C507FEE623153773002AC86D /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C507FEE523153773002AC86D /* WeatherCell.swift */; };
 		C507FEE82315377F002AC86D /* DateTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C507FEE72315377F002AC86D /* DateTimeCell.swift */; };
 		C5B6CDFB231CF93C00EDD14A /* HolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6CDFA231CF93C00EDD14A /* HolidayTableViewCell.swift */; };
+		C5B6CE1D231E1C0100EDD14A /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6CE1C231E1C0100EDD14A /* Holiday.swift */; };
 		C5CC935E2318EF2E000CA583 /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CC935D2318EF2E000CA583 /* HolidayViewController.swift */; };
 		C5CC936023190F07000CA583 /* SubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CC935F23190F07000CA583 /* SubtitleCell.swift */; };
 		C5CC93642319544C000CA583 /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CC93632319544B000CA583 /* WeatherEnums.swift */; };
@@ -33,6 +34,7 @@
 		C507FEE523153773002AC86D /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		C507FEE72315377F002AC86D /* DateTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeCell.swift; sourceTree = "<group>"; };
 		C5B6CDFA231CF93C00EDD14A /* HolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayTableViewCell.swift; sourceTree = "<group>"; };
+		C5B6CE1C231E1C0100EDD14A /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 		C5CC935D2318EF2E000CA583 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 		C5CC935F23190F07000CA583 /* SubtitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleCell.swift; sourceTree = "<group>"; };
 		C5CC93632319544B000CA583 /* WeatherEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEnums.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				C5CC935D2318EF2E000CA583 /* HolidayViewController.swift */,
 				C5B6CDFA231CF93C00EDD14A /* HolidayTableViewCell.swift */,
 				C5CC9365231A33FA000CA583 /* HolidayList.swift */,
+				C5B6CE1C231E1C0100EDD14A /* Holiday.swift */,
 				C5CC937E231A3AC3000CA583 /* HolidayJsonDTO.swift */,
 				C507FED5231531B2002AC86D /* Main.storyboard */,
 				C507FED8231531B6002AC86D /* Assets.xcassets */,
@@ -161,6 +164,7 @@
 			files = (
 				C5CC936023190F07000CA583 /* SubtitleCell.swift in Sources */,
 				C5CC935E2318EF2E000CA583 /* HolidayViewController.swift in Sources */,
+				C5B6CE1D231E1C0100EDD14A /* Holiday.swift in Sources */,
 				C5CC9366231A33FA000CA583 /* HolidayList.swift in Sources */,
 				C507FEE623153773002AC86D /* WeatherCell.swift in Sources */,
 				C5B6CDFB231CF93C00EDD14A /* HolidayTableViewCell.swift in Sources */,
