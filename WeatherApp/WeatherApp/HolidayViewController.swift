@@ -13,7 +13,9 @@ class HolidayViewController: UIViewController {
     @IBOutlet weak var holidayTableView: UITableView!
     
     func configureModel(holidayList: HolidayList) {
-        self.holidayList = holidayList
+        if self.holidayList == nil {
+            self.holidayList = holidayList
+        }
     }
     
     override func viewDidLoad() {
@@ -22,7 +24,9 @@ class HolidayViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        holidayList = HolidayList.init()
+        if holidayList == nil {
+             holidayList = HolidayList.init()
+        }
     }
 
     @objc func alertErrorMessage(_ notification: Notification){
@@ -62,7 +66,7 @@ class HolidayViewController: UIViewController {
     }
     
     private func retryNetworkReceive(){
-        configureModel(holidayList: HolidayList.init(true))
+        holidayList = HolidayList.init(true)
     }
 }
 
