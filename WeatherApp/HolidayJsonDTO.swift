@@ -25,8 +25,8 @@ struct HolidayJsonDTO {
             }
             return jsonData
         }catch {
-            let result = [ "\(URLInfo.wrongResult)" : error ]
-            NotificationCenter.default.post(name: .networkError, object: nil, userInfo: result)
+            let result = [ "\(URLInfo.result)" : error ]
+            NotificationCenter.default.post(name: .NetworkError, object: nil, userInfo: result)
         }
         return nil
     }
@@ -37,5 +37,5 @@ struct HolidayJsonDTO {
 }
 
 extension Notification.Name {
-    static var networkError = Notification.Name(rawValue: "networkError")
+    static var NetworkError = Notification.Name(rawValue: "networkError")
 }

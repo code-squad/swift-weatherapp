@@ -20,7 +20,8 @@ class HolidayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(alertErrorMessage), name: .networkError, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(alertErrorMessage), name: .NetworkError, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData), name: .SuccessReceivingData, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -29,9 +30,15 @@ class HolidayViewController: UIViewController {
         }
     }
 
+    @objc func reloadTableData(_ notification: Notification){
+        DispatchQueue.main.async {
+            self.holidayTableView.reloadData()
+        }
+    }
+    
     @objc func alertErrorMessage(_ notification: Notification){
         guard let userInfo = notification.userInfo as? [String: Error],
-              let error = userInfo["result"] else {
+            let error = userInfo["\(URLInfo.result)"] else {
             return
         }
         let alertController = UIAlertController.init(title: SystemErrorMessage.networkError.rawValue,
@@ -57,9 +64,6 @@ class HolidayViewController: UIViewController {
         let retryAction = UIAlertAction.init(title: ButtonMessage.retry.description, style: .default) { (retry: UIAlertAction) in
             if retry.isEnabled {
                 self.retryNetworkReceive()
-                DispatchQueue.main.async {
-                    self.holidayTableView.reloadData()
-                }
             }
         }
         return retryAction

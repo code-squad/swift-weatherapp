@@ -11,14 +11,13 @@ import Foundation
 
 struct HolidayList {
     private var holidays = [Holiday]()
-
+    
     func receiveTableViewCountFormat(format: (Int) -> Int) -> Int {
         return format(holidays.count)
     }
     
     func receiveTableViewContentFormat( format: (_ date: String, _ subtitle: String, _ image: String?) -> Void, rowAt: Int) {
         let date = holidays[rowAt].date
-        
         let subtitle = holidays[rowAt].subtitle
         guard let image = holidays[rowAt].image else {
             format(date, subtitle, nil)
@@ -30,6 +29,7 @@ struct HolidayList {
     init(_ flag: Bool = false){
         guard let holidayJsonData = HolidayJsonDTO.receiveJsonData(flag)else { return }
         convertJsonToDictionaryArray(holidayJsonData)
+        NotificationCenter.default.post(name: .SuccessReceivingData, object: nil, userInfo: nil)
     }
     
     private mutating func convertJsonToDictionaryArray(_ data: Data) {
@@ -58,4 +58,9 @@ struct HolidayList {
     private func checkNilForImage(_ holiday: [String: Any]) -> Bool {
         return holiday[KeyInfo.image.rawValue] != nil
     }
+}
+
+
+extension Notification.Name {
+    static var SuccessReceivingData = Notification.Name(rawValue: "succeedReceivingData")
 }
