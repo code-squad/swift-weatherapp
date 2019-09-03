@@ -19,4 +19,23 @@ class HolidayTableViewCell: UITableViewCell {
         subtitleLabel.text = nil
         self.backgroundView = nil
     }
+    
+    var tableViewContentFormat: (String, String, String?) -> Void {
+        let tableViewContentFormat = { (date: String, subtitle: String, image: String? ) in
+            self.dateLabel.text = date
+            self.subtitleLabel.text = subtitle
+            if let imageName = image {
+                let imageAssetName = self.buildImageAssetName(imageName)
+                self.backgroundView = UIImageView.init(image: UIImage.init(named: imageAssetName))
+                self.backgroundView?.contentMode = .scaleAspectFill
+            }else {
+                self.backgroundColor = .gray
+            }
+        }
+        return tableViewContentFormat
+    }
+    
+    private func buildImageAssetName(_ info: String) -> String {
+        return "\(ImageInfo.prefixWeather.rawValue)\(info)\(ImageInfo.suffixPngExtension.rawValue)"
+    }
 }
