@@ -18,6 +18,51 @@ class HolidayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(alertErrorMessage), name: .networkError, object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        holidayList = HolidayList.init()
+    }
+
+    @objc func alertErrorMessage(_ notification: Notification){
+        guard let userInfo = notification.userInfo as? [String: Error],
+              let error = userInfo["result"] else {
+            return
+        }
+        let alertController = UIAlertController.init(title: SystemErrorMessage.networkError.rawValue,
+                                                     message: "\(SystemErrorMessage.detailMessage.rawValue)\(error.localizedDescription)",
+                                                     preferredStyle: .alert)
+        let retryAction = buildRetryAction()
+        let defaultExitAction = buildDefaultExitAction()
+        alertController.addAction(retryAction)
+        alertController.addAction(defaultExitAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    private func buildDefaultExitAction() -> UIAlertAction {
+        let defaultExitAction = UIAlertAction.init(title: ButtonMessage.exit.description, style: .destructive) { (exit: UIAlertAction) in
+            if exit.isEnabled{
+                UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
+            }
+        }
+        return defaultExitAction
+    }
+    
+    private func buildRetryAction() -> UIAlertAction {
+        let retryAction = UIAlertAction.init(title: ButtonMessage.retry.description, style: .default) { (retry: UIAlertAction) in
+            if retry.isEnabled {
+                self.retryNetworkReceive()
+                DispatchQueue.main.async {
+                    self.holidayTableView.reloadData()
+                }
+            }
+        }
+        return retryAction
+    }
+    
+    private func retryNetworkReceive(){
+        configureModel(holidayList: HolidayList.init(true))
     }
 }
 
@@ -25,6 +70,9 @@ extension HolidayViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let format = { (count: Int) in
             return count
+        }
+        guard holidayList != nil else {
+            return 0
         }
         let count = holidayList.receiveTableViewCountFormat(format: format)
         return  count
@@ -35,23 +83,8 @@ extension HolidayViewController: UITableViewDataSource {
             return HolidayTableViewCell()
         }
         cell.backgroundView?.clearsContextBeforeDrawing = true
-        let format = { (date: String, subtitle: String, image: String? ) in
-            cell.dateLabel.text = date
-            cell.subtitleLabel.text = subtitle
-            if let imageName = image {
-                let imageAssetName = self.buildImageAssetName(imageName)
-                cell.backgroundView = UIImageView.init(image: UIImage.init(named: imageAssetName))
-                cell.backgroundView?.contentMode = .scaleAspectFill
-            }else {
-                cell.backgroundColor = .gray
-            }
-        }
-        holidayList.receiveTableViewContentFormat(format: format, rowAt: indexPath.row)
+        holidayList.receiveTableViewContentFormat(format: cell.tableViewContentFormat, rowAt: indexPath.row)
         return cell
-    }
-    
-    private func buildImageAssetName(_ info: String) -> String {
-        return "\(ImageInfo.prefixWeather.rawValue)\(info)\(ImageInfo.suffixPngExtension.rawValue)"
     }
 }
 
