@@ -38,7 +38,7 @@ class HolidayViewController: UIViewController {
     
     @objc func alertErrorMessage(_ notification: Notification){
         guard let userInfo = notification.userInfo as? [String: Error],
-            let error = userInfo["\(URLInfo.result)"] else {
+            let error = userInfo[URLInfo.result] else {
             return
         }
         let alertController = UIAlertController.init(title: SystemErrorMessage.networkError.rawValue,
