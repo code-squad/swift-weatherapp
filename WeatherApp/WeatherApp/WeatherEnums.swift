@@ -23,3 +23,16 @@ enum ReusableCellInfo: String {
     case holidayCustomCell = "HolidayCustomCell"
     case subtitleCell = "subtitleCell"
 }
+
+enum SystemErrorMessage: String {
+    case networkError = "Network Error"
+    case detailMessage = "서버로부터 데이터를 로드할 수 없습니다.\n"
+}
+
+enum ButtonMessage: String, CustomStringConvertible {
+    case retry = "재시도"
+    case exit = "연결 취소"
+    var description: String {
+        return self.rawValue
+    }
+}
