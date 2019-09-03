@@ -37,11 +37,8 @@ enum ButtonMessage: String, CustomStringConvertible {
     }
 }
 
-enum URLInfo: String, CustomStringConvertible{
-    case correctURL = "http://public.codesquad.kr/jk/weatherapp/customcell.json"
-    case wrongURL = "http://public.codesquad.kr/jk/weatherapp/customce"
-    case result = "result"
-    var description: String {
-        return self.rawValue
-    }
+struct URLInfo{
+    static let correctURL = "http://public.codesquad.kr/jk/weatherapp/customcell.json"
+    static let wrongURL = "http://public.codesquad.kr/jk/weatherapp/customce"
+    static let result = "result"
 }
