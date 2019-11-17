@@ -28,19 +28,19 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gy1-5j-LBv">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                                            <rect key="frame" x="16" y="16" width="382" height="48"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jn1-bJ-eOg">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="24"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017년 12월 25일" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXA-w6-IQO" userLabel="dateLabel">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="207" height="24"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="191" height="24"/>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오전 11시 40분" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ie-yP-fDc" userLabel="timeLabel">
-                                                                            <rect key="frame" x="207" y="0.0" width="207" height="24"/>
+                                                                            <rect key="frame" x="191" y="0.0" width="191" height="24"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                                                                     </constraints>
                                                                 </stackView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 이벤트가 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fic-Bk-Ult" userLabel="eventLabel">
-                                                                    <rect key="frame" x="0.0" y="24" width="414" height="56"/>
+                                                                    <rect key="frame" x="0.0" y="24" width="382" height="24"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="uX5-pc-P0h"/>
                                                                     </constraints>
@@ -65,10 +65,10 @@
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="gy1-5j-LBv" secondAttribute="trailing" id="mqu-YZ-JDL"/>
-                                                        <constraint firstAttribute="bottom" secondItem="gy1-5j-LBv" secondAttribute="bottom" id="p1K-TO-IZp"/>
-                                                        <constraint firstItem="gy1-5j-LBv" firstAttribute="leading" secondItem="AnV-Uy-eGc" secondAttribute="leading" id="ty3-gY-zgV"/>
-                                                        <constraint firstItem="gy1-5j-LBv" firstAttribute="top" secondItem="AnV-Uy-eGc" secondAttribute="top" id="vQd-yP-Mhp"/>
+                                                        <constraint firstAttribute="trailing" secondItem="gy1-5j-LBv" secondAttribute="trailing" constant="16" id="mqu-YZ-JDL"/>
+                                                        <constraint firstAttribute="bottom" secondItem="gy1-5j-LBv" secondAttribute="bottom" constant="16" id="p1K-TO-IZp"/>
+                                                        <constraint firstItem="gy1-5j-LBv" firstAttribute="leading" secondItem="AnV-Uy-eGc" secondAttribute="leading" constant="16" id="ty3-gY-zgV"/>
+                                                        <constraint firstItem="gy1-5j-LBv" firstAttribute="top" secondItem="AnV-Uy-eGc" secondAttribute="top" constant="16" id="vQd-yP-Mhp"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
