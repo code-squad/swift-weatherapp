@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+enum AssetName {
+    
+    static let sunny = "weather-sunny"
+    static let rainny = "weather-rainny"
+    static let snowy = "weather-snowy"
+    static let cloudy = "weather-cloudy"
+}
