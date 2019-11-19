@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct Holiday {
+    
+    let date: String
+    let subtitle: String
+}
