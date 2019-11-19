@@ -30,11 +30,7 @@ class WeatherViewController: UITableViewController {
         }
     }
 }
-// MARK: - Layout & Attribute
-extension WeatherViewController {
-    
-}
-// MARK: - Table view data source
+// MARK: - UITableViewDataSource
 extension WeatherViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,14 +50,17 @@ extension WeatherViewController {
         case 1:
             return getWeatherCell(for: indexPath)
         default:
-            fatalError("TableCell is not configured.")
+            return UITableViewCell()
         }
     }
     
     private func getDateTimeCell(for indexPath: IndexPath) -> DateTimeCell {
         guard
             let cell = tableView.dequeueReusableCell(withType: DateTimeCell.self, for: indexPath)
-            else { fatalError("DateTimeCell is not configured.") }
+            else {
+                assertionFailure("DateTimeCell is not cofigured")
+                return DateTimeCell()
+        }
         
         cell.configure()
         return cell
@@ -70,7 +69,10 @@ extension WeatherViewController {
     private func getWeatherCell(for indexPath: IndexPath) -> WeatherCell {
         guard
             let cell = tableView.dequeueReusableCell(withType: WeatherCell.self, for: indexPath)
-            else { fatalError("WeatherCell is not configured.") }
+            else {
+                assertionFailure("WeatherCell is not cofigured")
+                return WeatherCell()
+        }
         
         cell.configure()
         return cell
