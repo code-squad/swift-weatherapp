@@ -21,6 +21,6 @@ enum MyData {
     {\"date\":\"9월24일\", \"subtitle\":\"추석\"},
     {\"date\":\"10월3일\", \"subtitle\":\"개천절\"},
     {\"date\":\"10월9일\", \"subtitle\":\"한글날\"},
-    {\"date\":\"12월25일\", \"subtitle\":\"성탄절\"}]"
+    {\"date\":\"12월25일\", \"subtitle\":\"성탄절\"}]
     """.data(using: .utf8)!
 }
