@@ -29,23 +29,3 @@ class HolidayDataSource: NSObject {
         
     }
 }
-// MARK: UITableViewDataSource
-extension HolidayDataSource: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return holidays.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard
-            let cell = tableView.dequeueReusableCell(withType: HolidayCell.self, for: indexPath)
-            else {
-                assertionFailure("HolidayCell is not cofigured")
-                return HolidayCell()
-        }
-        
-        let holiday = holidays[indexPath.row]
-        cell.configure(holiday: holiday)
-        return cell
-    }
-}
