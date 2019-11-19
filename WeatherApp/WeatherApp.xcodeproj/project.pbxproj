@@ -24,6 +24,7 @@
 		0E3271922383AA4400EF36B4 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3271912383AA4400EF36B4 /* Date+.swift */; };
 		0E3271942383DD0C00EF36B4 /* Holidays.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E3271932383DD0B00EF36B4 /* Holidays.json */; };
 		0E3271962383F56100EF36B4 /* HolidayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3271952383F56100EF36B4 /* HolidayDataSource.swift */; };
+		0E32719D238458BE00EF36B4 /* HolidayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E32719C238458BE00EF36B4 /* HolidayViewModel.swift */; };
 		7707AE907BDD8BEB81E3D46E /* libPods-WeatherApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 859F89D9CF24AF6EE5C122CD /* libPods-WeatherApp.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		0E3271912383AA4400EF36B4 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		0E3271932383DD0B00EF36B4 /* Holidays.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Holidays.json; sourceTree = "<group>"; };
 		0E3271952383F56100EF36B4 /* HolidayDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDataSource.swift; sourceTree = "<group>"; };
+		0E32719C238458BE00EF36B4 /* HolidayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewModel.swift; sourceTree = "<group>"; };
 		859F89D9CF24AF6EE5C122CD /* libPods-WeatherApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B03607D4F62C35BD77560C /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		9ED182C521F3C11DAF87136B /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		0E32715E238300FE00EF36B4 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				0E32719B238458AB00EF36B4 /* ViewModel */,
 				0E3271932383DD0B00EF36B4 /* Holidays.json */,
 				0E32717B23830DA800EF36B4 /* Common */,
 				0E32718923838E4100EF36B4 /* Model */,
@@ -161,6 +164,14 @@
 				0E32718C23838F9D00EF36B4 /* MyData.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		0E32719B238458AB00EF36B4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E32719C238458BE00EF36B4 /* HolidayViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B63030724D0C0311E1E0E91B /* Frameworks */ = {
@@ -277,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E32719D238458BE00EF36B4 /* HolidayViewModel.swift in Sources */,
 				0E3271922383AA4400EF36B4 /* Date+.swift in Sources */,
 				0E327160238300FE00EF36B4 /* AppDelegate.swift in Sources */,
 				0E327174238302A100EF36B4 /* WeatherViewController.swift in Sources */,

@@ -20,11 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
-        let dataSource = HolidayDataSource()
-            .then { $0.fetchDataSource() }
+        let viewModel = HolidayViewModel()
         
         let holidayVC = HolidayViewController()
-            .then { $0.holidaysDataSource = dataSource}
+            .then { $0.holidayViewModel = viewModel }
         
         window?.rootViewController = UINavigationController(rootViewController: holidayVC)
         
