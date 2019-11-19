@@ -48,6 +48,7 @@ extension WeatherCell {
     private func setUpConstraints() {
         weatherImageView.snp.makeConstraints { make in
             make.center.equalToSuperview()
+            make.edges.equalToSuperview()
         }
         
         weatherDescription.snp.makeConstraints { make in

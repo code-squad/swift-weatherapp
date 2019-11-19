@@ -67,6 +67,7 @@ extension DateTimeCell {
             make.top.equalTo(dateLabel.snp.bottom)
             make.height.greaterThanOrEqualTo(20)
             make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-10)
         }
     }
 }
