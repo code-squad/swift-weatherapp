@@ -10,6 +10,21 @@ import UIKit
 
 class HolidayViewController: UIViewController {
 
+    private var holidays = [Holiday]()
+    
+    private func fetchDataSource() {
+        guard
+            let holidaysJSON = try? JSONSerialization.jsonObject(with: MyData.holiday) as? [[String: String]]
+            else { return }
+        
+        for holiday in holidaysJSON {
+            let date = holiday["date"]!
+            let subTitle = holiday["subtitle"]!
+            holidays.append(Holiday(date: date, subtitle: subTitle))
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
