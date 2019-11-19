@@ -31,13 +31,13 @@ extension DateTimeCell {
             self.contentView.addSubview($0)
             $0.textAlignment = .left
             $0.font = UIFont.boldSystemFont(ofSize: 17)
-            $0.text = "2019년 11월 19일"
+            $0.text = Date.currentTime(with: "yyyy년 MM월 dd일")
         }
         
         timeLabel.do {
             self.contentView.addSubview($0)
             $0.textAlignment = .right
-            $0.text = "오전 2시 30분"
+            $0.text = Date.currentTime(with: "a hh시 mm분")
         }
         
         eventLabel.do {
