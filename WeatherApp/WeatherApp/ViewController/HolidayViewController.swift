@@ -33,8 +33,10 @@ class HolidayViewController: UIViewController {
             else { return }
         
         for holiday in holidaysJSON {
-            let date = holiday["date"]!
-            let subTitle = holiday["subtitle"]!
+            guard
+                let date = holiday["date"],
+                let subTitle = holiday["subtitle"]
+                else { continue }
             holidays.append(Holiday(date: date, subtitle: subTitle))
         }
         
