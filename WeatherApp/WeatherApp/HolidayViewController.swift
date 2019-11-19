@@ -8,8 +8,8 @@
 
 import UIKit
 
-class HolidayViewController: UIViewController {
-
+class HolidayViewController: UIViewController , UITableViewDataSource {
+    
     //MARK: -IBOutlet
     @IBOutlet weak var holidayTable: UITableView!
     
@@ -18,5 +18,19 @@ class HolidayViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    //MARK: -UITableViewDataSource Add
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "\(indexPath.row)"
+    
+        
+        return cell
     }
 }
