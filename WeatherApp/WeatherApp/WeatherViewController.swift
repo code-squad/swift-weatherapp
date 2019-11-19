@@ -73,7 +73,6 @@ extension WeatherViewController {
             else { fatalError("WeatherCell is not configured.") }
         
         cell.configure()
-        
         return cell
     }
 }
