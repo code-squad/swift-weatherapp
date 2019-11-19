@@ -17,6 +17,15 @@ class HolidayViewController: UIViewController {
     
     private var holidays = [Holiday]()
     
+    // MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        fetchDataSource()
+        configureTableView()
+    }
+    
+    // MARK: - Method
     private func fetchDataSource() {
         guard
             let holidaysJSON = try? JSONSerialization.jsonObject(with: MyData.holiday) as? [[String: String]]
@@ -30,13 +39,6 @@ class HolidayViewController: UIViewController {
         
     }
     
-    // MARK: - Life Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        fetchDataSource()
-        configureTableView()
-    }
 }
 // MARK: - Layout & Attribute
 extension HolidayViewController {
