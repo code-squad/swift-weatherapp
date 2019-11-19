@@ -12,35 +12,20 @@ import Then
 
 class HolidayViewController: UIViewController {
     
-    // MARK: - Properties
-    private var holidays = [Holiday]()
     
     // MARK: - UI
     let holidayTableView = UITableView()
+    
+    // MARK: - Dependencies
+    var holidaysDataSource: UITableViewDataSource?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchDataSource()
         configureTableView()
     }
     
-    // MARK: - Method
-    private func fetchDataSource() {
-        guard
-            let holidaysJSON = try? JSONSerialization.jsonObject(with: MyData.holiday) as? [[String: String]]
-            else { return }
-        
-        for holiday in holidaysJSON {
-            guard
-                let date = holiday["date"],
-                let subTitle = holiday["subtitle"]
-                else { continue }
-            holidays.append(Holiday(date: date, subtitle: subTitle))
-        }
-        
-    }
     
 }
 // MARK: - Layout & Attribute
@@ -53,8 +38,8 @@ extension HolidayViewController {
     
     private func setUpTableViewAttributes() {
         holidayTableView.do {
+            $0.dataSource = holidaysDataSource
             self.view.addSubview($0)
-            $0.dataSource = self
             $0.register(HolidayCell.self,
                         forCellReuseIdentifier: HolidayCell.reuseIdentifier)
         }
@@ -64,25 +49,5 @@ extension HolidayViewController {
         holidayTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-    }
-}
-// MARK: UITableViewDataSource
-extension HolidayViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return holidays.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard
-            let cell = tableView.dequeueReusableCell(withType: HolidayCell.self, for: indexPath)
-            else {
-                assertionFailure("HolidayCell is not cofigured")
-                return HolidayCell()
-        }
-        
-        let holiday = holidays[indexPath.row]
-        cell.configure(holiday: holiday)
-        return cell
     }
 }
