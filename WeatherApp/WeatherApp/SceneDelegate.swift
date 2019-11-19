@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
-        window?.rootViewController = UINavigationController(rootViewController: WeatherViewController())
+        window?.rootViewController = UINavigationController(rootViewController: HolidayViewController())
         window?.makeKeyAndVisible()
     }
 
