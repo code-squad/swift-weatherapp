@@ -21,6 +21,18 @@ class WeatherViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    
+    // MARK: - Configure
+    private func configureTableView() {
+        self.tableView.do {
+            $0.rowHeight = UITableView.automaticDimension
+            $0.separatorStyle = .none
+            $0.register(DateTimeCell.self,
+                        forCellReuseIdentifier: DateTimeCell.reuseIdentifier)
+            $0.register(WeatherCell.self,
+                        forCellReuseIdentifier: WeatherCell.reuseIdentifier)
+        }
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
