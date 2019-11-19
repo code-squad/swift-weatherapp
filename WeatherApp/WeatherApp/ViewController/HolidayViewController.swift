@@ -12,10 +12,11 @@ import Then
 
 class HolidayViewController: UIViewController {
     
+    // MARK: - Properties
+    private var holidays = [Holiday]()
+    
     // MARK: - UI
     let holidayTableView = UITableView()
-    
-    private var holidays = [Holiday]()
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
