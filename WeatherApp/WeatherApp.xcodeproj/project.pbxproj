@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		44FB29C7238395E7007F5030 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HolidayViewController.swift; path = WeatherApp/HolidayViewController.swift; sourceTree = "<group>"; };
+		44FB29C7238395E7007F5030 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 		F35AD697237B9A9B004915B4 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F35AD69A237B9A9B004915B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F35AD69C237B9A9B004915B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +42,6 @@
 		F35AD68E237B9A9B004915B4 = {
 			isa = PBXGroup;
 			children = (
-				44FB29C7238395E7007F5030 /* HolidayViewController.swift */,
 				F35AD699237B9A9B004915B4 /* WeatherApp */,
 				F35AD698237B9A9B004915B4 /* Products */,
 			);
@@ -60,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				F35AD69A237B9A9B004915B4 /* AppDelegate.swift */,
+				44FB29C7238395E7007F5030 /* HolidayViewController.swift */,
 				F35AD69C237B9A9B004915B4 /* SceneDelegate.swift */,
 				F35AD69E237B9A9B004915B4 /* ViewController.swift */,
 				F35AD6A0237B9A9B004915B4 /* Main.storyboard */,
