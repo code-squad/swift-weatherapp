@@ -17,7 +17,9 @@ class HolidayViewController: UIViewController {
     let holidayTableView = UITableView()
     
     // MARK: - Dependencies
-    var holidaysDataSource: UITableViewDataSource?
+    var holidayViewModel: HolidayViewModelType? {
+        didSet { bindViewModel() } 
+    }
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -27,6 +29,17 @@ class HolidayViewController: UIViewController {
     }
     
     
+}
+// MARK: - Bind
+extension HolidayViewController {
+    
+    func bindViewModel() {
+        guard let viewModel = holidayViewModel else { return }
+        
+        viewModel.dataDidLoad = { [weak self] in
+            self?.holidayTableView.reloadData()
+        }
+    }
 }
 // MARK: - Layout & Attribute
 extension HolidayViewController {
@@ -38,7 +51,7 @@ extension HolidayViewController {
     
     private func setUpTableViewAttributes() {
         holidayTableView.do {
-            $0.dataSource = holidaysDataSource
+            $0.dataSource = self
             self.view.addSubview($0)
             $0.register(HolidayCell.self,
                         forCellReuseIdentifier: HolidayCell.reuseIdentifier)
@@ -49,5 +62,25 @@ extension HolidayViewController {
         holidayTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+}
+// MARK: UITableViewDataSource
+extension HolidayViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return holidayViewModel?.numOfHolidays() ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard
+            let cell = tableView.dequeueReusableCell(withType: HolidayCell.self, for: indexPath),
+            let holiday = holidayViewModel?.getHoliday(index: indexPath.row)
+            else {
+                assertionFailure("HolidayCell is not cofigured")
+                return HolidayCell()
+        }
+        
+        cell.configure(holiday: holiday)
+        return cell
     }
 }
