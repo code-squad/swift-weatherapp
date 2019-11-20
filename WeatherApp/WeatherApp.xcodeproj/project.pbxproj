@@ -16,7 +16,7 @@
 		0E32717D23830DCC00EF36B4 /* Reuseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E32717C23830DCC00EF36B4 /* Reuseable.swift */; };
 		0E32718023830ECF00EF36B4 /* TableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E32717F23830ECE00EF36B4 /* TableView+.swift */; };
 		0E327183238318F900EF36B4 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E327182238318F900EF36B4 /* WeatherCell.swift */; };
-		0E32718523831B1D00EF36B4 /* WeatherAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E32718423831B1D00EF36B4 /* WeatherAsset.swift */; };
+		0E32718523831B1D00EF36B4 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E32718423831B1D00EF36B4 /* Asset.swift */; };
 		0E32718823838DF100EF36B4 /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E32718723838DF100EF36B4 /* HolidayViewController.swift */; };
 		0E32718B23838EDA00EF36B4 /* HolidayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E32718A23838EDA00EF36B4 /* HolidayCell.swift */; };
 		0E32718D23838F9D00EF36B4 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E32718C23838F9D00EF36B4 /* MyData.swift */; };
@@ -39,7 +39,7 @@
 		0E32717C23830DCC00EF36B4 /* Reuseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reuseable.swift; sourceTree = "<group>"; };
 		0E32717F23830ECE00EF36B4 /* TableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+.swift"; sourceTree = "<group>"; };
 		0E327182238318F900EF36B4 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
-		0E32718423831B1D00EF36B4 /* WeatherAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAsset.swift; sourceTree = "<group>"; };
+		0E32718423831B1D00EF36B4 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		0E32718723838DF100EF36B4 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 		0E32718A23838EDA00EF36B4 /* HolidayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayCell.swift; sourceTree = "<group>"; };
 		0E32718C23838F9D00EF36B4 /* MyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
@@ -90,7 +90,6 @@
 				0E32717B23830DA800EF36B4 /* Common */,
 				0E32718923838E4100EF36B4 /* Model */,
 				0E32717E23830EBE00EF36B4 /* Extension */,
-				0E327181238318CD00EF36B4 /* Cell */,
 				0E3271762383085E00EF36B4 /* View */,
 				0E3271752383084F00EF36B4 /* ViewController */,
 				0E32715F238300FE00EF36B4 /* AppDelegate.swift */,
@@ -114,6 +113,7 @@
 		0E3271762383085E00EF36B4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0E327181238318CD00EF36B4 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,7 +157,7 @@
 		0E32718E2383913500EF36B4 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				0E32718423831B1D00EF36B4 /* WeatherAsset.swift */,
+				0E32718423831B1D00EF36B4 /* Asset.swift */,
 				0E32718C23838F9D00EF36B4 /* MyData.swift */,
 			);
 			path = Constant;
@@ -295,7 +295,7 @@
 				0E327162238300FE00EF36B4 /* SceneDelegate.swift in Sources */,
 				0E3271902383A8D200EF36B4 /* Holiday.swift in Sources */,
 				0E32718823838DF100EF36B4 /* HolidayViewController.swift in Sources */,
-				0E32718523831B1D00EF36B4 /* WeatherAsset.swift in Sources */,
+				0E32718523831B1D00EF36B4 /* Asset.swift in Sources */,
 				0E32718D23838F9D00EF36B4 /* MyData.swift in Sources */,
 				0E32718023830ECF00EF36B4 /* TableView+.swift in Sources */,
 				0E327183238318F900EF36B4 /* WeatherCell.swift in Sources */,
