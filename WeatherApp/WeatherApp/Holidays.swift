@@ -40,7 +40,7 @@ struct Holidays {
 
     ///holiday 데이터를 반환
     func sendHoliday(index: Int) -> [String: String]? {
-        guard 0 < index  && index < count() else {
+        guard 0 <= index  && index < count() else {
             return nil
         }
         return holidays[index]

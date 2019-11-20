@@ -10,26 +10,35 @@ import UIKit
 
 class HolidayViewController: UIViewController , UITableViewDataSource {
     
+    //MARK: -value
+    private var holiday = Holidays()
+
     //MARK: -IBOutlet
     @IBOutlet weak var holidayTable: UITableView!
     
     //MARK: -override
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     //MARK: -UITableViewDataSource Add
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        guard let row = holiday?.count() else {
+            return 0
+        }
+        return row
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "\(indexPath.row)"
-    
+        let cell = tableView.dequeueReusableCell(withIdentifier: "idCell", for: indexPath)
+        
+        guard let holiday = self.holiday?.sendHoliday(index: indexPath.row) else {
+            return cell
+        }
+        
+        cell.textLabel?.text = holiday["date"]
+        cell.detailTextLabel?.text = holiday["subtitle"]
         
         return cell
     }
