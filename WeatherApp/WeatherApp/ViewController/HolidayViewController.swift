@@ -55,6 +55,7 @@ extension HolidayViewController {
             self.view.addSubview($0)
             $0.register(HolidayCell.self,
                         forCellReuseIdentifier: HolidayCell.reuseIdentifier)
+            $0.rowHeight = 80
         }
     }
     
