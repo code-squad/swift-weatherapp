@@ -21,17 +21,26 @@ class HolidayCell: UITableViewCell {
         setUpAttributes()
         setUpConstraints()
         
-        self.dataLabel.text = holiday.date
-        self.subTitleLabel.text = holiday.subtitle
+        if let asset = Asset(rawValue: holiday.image) {
+            backgroundImageView.image = UIImage(named: asset.fileName)
+        }
+        dataLabel.text = holiday.date
+        subTitleLabel.text = holiday.subtitle
     }
 }
 // MARK: - Layout & Attributes
 extension HolidayCell {
     
     private func setUpAttributes() {
+        
+        self.contentView.do {
+            $0.clipsToBounds = true
+        }
+        
         backgroundImageView.do {
             self.contentView.addSubview($0)
             $0.backgroundColor = .gray
+            $0.contentMode = .scaleAspectFill
         }
         
         dataLabel.do {
