@@ -10,6 +10,5 @@ import Foundation
 
 enum MyData {
 
-    static let url =  Bundle.main.url(forResource: "Holidays", withExtension: "json")!
-    static let holiday = try! String(contentsOf: url).data(using: .utf8)!
+    static let url = URL(string: "http://public.codesquad.kr/jk/weatherapp/customcell.json")!
 }
