@@ -26,7 +26,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .then { $0.holidayViewModel = viewModel }
         
         window?.rootViewController = UINavigationController(rootViewController: holidayVC)
-        
         window?.makeKeyAndVisible()
     }
 
