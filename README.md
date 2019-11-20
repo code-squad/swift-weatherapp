@@ -33,3 +33,26 @@ STEP18 날씨 앱 저장소
 
 
 
+## 18-2 : DataSource 객체
+
+### 화면 이미지
+
+<img src="./img/step02.png" width="200" style="max-width:100%;">
+
+### 핵심 기능
+
+- JSONSerialization을 활용
+- UITableViewDataSource 프로토콜 채택하고 필수 메소드 구현
+
+### 학습 내용
+
+- UITableViewController와 UIViewController에 UITableView를 추가한 차이를 학습
+- DataSource 프로토콜을 구현하기 위한 필수 메소드 형식과 동작 방식을 정리
+- Delegate 패턴과 DataSource 프로토콜과 비슷한 점, 차이점은 무엇인지 학습
+
+## 어려웠던 점
+
+- JSONSerialization를 활용해서 Holidays를 만들었는데, UITableViewDataSource 추가하는 과정에서 dequeueReusableCell를 제대로 쓸 줄 몰라서 어려웠다.
+
+
+
