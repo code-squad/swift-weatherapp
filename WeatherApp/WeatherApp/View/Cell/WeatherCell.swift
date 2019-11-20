@@ -30,7 +30,7 @@ extension WeatherCell {
         weatherImageView.do {
             self.contentView.addSubview($0)
             $0.contentMode = .scaleAspectFill
-            $0.image = UIImage(named: AssetName.rainny)
+            $0.image = UIImage(named: Asset.rainny.fileName)
         }
         
         weatherDescription.do {
