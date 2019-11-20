@@ -12,4 +12,5 @@ struct Holiday {
     
     let date: String
     let subtitle: String
+    let image: String
 }
