@@ -30,9 +30,7 @@ class HolidayViewModel: HolidayViewModelType {
     
     // MARK: Status Closure
     var dataDidLoad: (() -> Void)? {
-        didSet {
-            loadService.fetchHolidayData { self.holidays = $0 }
-        }
+        didSet { loadService.fetchHolidayData { self.holidays = $0 } }
     }
     
     // MARK: - Initializer
