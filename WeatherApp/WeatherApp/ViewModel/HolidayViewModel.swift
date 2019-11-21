@@ -21,7 +21,9 @@ protocol HolidayViewModelType: class {
 class HolidayViewModel: HolidayViewModelType {
     
     // MARK: - Properties
-    private var holidays = [Holiday]()
+    private var holidays = [Holiday]() {
+        didSet { dataDidLoad?() }
+    }
     
     // MARK: - Dependencies
     private var loadService: DataLoader

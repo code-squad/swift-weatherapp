@@ -37,7 +37,9 @@ extension HolidayViewController {
         guard let viewModel = holidayViewModel else { return }
         
         viewModel.dataDidLoad = { [weak self] in
-            self?.holidayTableView.reloadData()
+            DispatchQueue.main.async {
+                self?.holidayTableView.reloadData()
+            }
         }
     }
 }
