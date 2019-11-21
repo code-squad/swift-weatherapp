@@ -23,9 +23,19 @@ class HolidayViewModel: HolidayViewModelType {
     // MARK: - Properties
     private var holidays = [Holiday]()
     
+    // MARK: - Dependencies
+    private var loadService: DataLoader
+    
     // MARK: Status Closure
     var dataDidLoad: (() -> Void)? {
-        didSet { fetchHolidayData() }
+        didSet {
+            loadService.fetchHolidayData { self.holidays = $0 }
+        }
+    }
+    
+    // MARK: - Initializer
+    init(loadService: DataLoader) {
+        self.loadService = loadService
     }
     
     // MARK: - Method
@@ -37,22 +47,4 @@ class HolidayViewModel: HolidayViewModelType {
         return holidays[index]
     }
     
-    private func fetchHolidayData() {
-        guard
-            let holidayData = try? Data(contentsOf: MyData.url),
-            let holidaysJSON = try? JSONSerialization.jsonObject(with: holidayData) as? [[String: String]]
-            else { return }
-        
-        for holiday in holidaysJSON {
-            guard
-                let date = holiday["date"],
-                let subTitle = holiday["subtitle"],
-                let image = holiday["image"]
-                else { continue }
-            
-            holidays.append(Holiday(date: date, subtitle: subTitle, image: image))
-        }
-        
-        dataDidLoad?()
-    }
 }

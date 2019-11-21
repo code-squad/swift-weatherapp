@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
-        let viewModel = HolidayViewModel()
+        let viewModel = HolidayViewModel(loadService: DataLoader())
         
         let holidayVC = HolidayViewController()
             .then { $0.holidayViewModel = viewModel }
