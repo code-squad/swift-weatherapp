@@ -57,6 +57,19 @@ ImageView를 add후 contentMode = aspectFill로 설정하니 셀보다 이미지
 
 clipToBounds 를 통해 cilpping을 해서 해결했다.
 
+#### 피드백 🧐
+
+- ```
+  뷰모델은 뷰에 직접적으로 넘길 데이터만 처리하는게 맞지 않을까요?
+  Holidays JSON 파일을 가져와서 처리는 하는 것은 뷰모델의 역할이 아니지 않을까요?
+  ```
+
+  - 뷰 모델에서 로드 로직을 가지고 있게하였다.
+
+  - Fetch 를 담당하는 loader를 구현하고,  분리하였다.
+
+    
+
 JSONSerialize로  Parsing을 하는 로직을 구현했다.
 
 또 Cell의 init을 오버라이드하여, cell의 Cell.Style을 코드로 구현하는 것 또한 진행해보았다.
