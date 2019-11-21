@@ -11,12 +11,13 @@ import Foundation
 struct DataLoader {
     
     func fetchHolidayData(completion: @escaping ([Holiday]) -> Void) {
-        var holidays = [Holiday]()
         DispatchQueue.global().async {
             guard
                 let holidayData = try? Data(contentsOf: MyData.url),
                 let holidaysJSON = try? JSONSerialization.jsonObject(with: holidayData) as? [[String: String]]
                 else { return }
+            
+            var holidays = [Holiday]()
             
             for holiday in holidaysJSON {
                 guard
@@ -26,9 +27,7 @@ struct DataLoader {
                     else { continue }
                 
                 holidays.append(Holiday(date: date, subtitle: subTitle, image: image))
-                
             }
-
             completion(holidays)
         }
     }
