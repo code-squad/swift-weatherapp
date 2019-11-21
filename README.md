@@ -42,3 +42,21 @@ json파일을 에서 string을 읽어온 뒤
 JSONSerialize로  Parsing을 하는 로직을 구현했다.
 
 또 Cell의 init을 오버라이드하여, cell의 Cell.Style을 코드로 구현하는 것 또한 진행해보았다.
+
+
+
+---
+
+## STEP3
+
+<img width="488" alt="스크린샷 2019-11-21 오전 11 54 43" src="https://user-images.githubusercontent.com/39197978/69300174-cc720780-0c55-11ea-8352-5aa8237a405c.png">
+
+#### 진행 🏃‍♂️
+
+ImageView를 add후 contentMode = aspectFill로 설정하니 셀보다 이미지가 커서 셀 밖으로 튀어나오는 이슈가 있었다.
+
+clipToBounds 를 통해 cilpping을 해서 해결했다.
+
+JSONSerialize로  Parsing을 하는 로직을 구현했다.
+
+또 Cell의 init을 오버라이드하여, cell의 Cell.Style을 코드로 구현하는 것 또한 진행해보았다.
