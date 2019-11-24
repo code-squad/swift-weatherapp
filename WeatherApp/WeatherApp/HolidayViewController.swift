@@ -37,8 +37,8 @@ class HolidayViewController: UIViewController , UITableViewDataSource {
             return cell
         }
         
-        cell.textLabel?.text = holiday["date"]
-        cell.detailTextLabel?.text = holiday["subtitle"]
+        cell.textLabel?.text = holiday.data
+        cell.detailTextLabel?.text = holiday.subtitle
         
         return cell
     }

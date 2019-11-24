@@ -9,7 +9,8 @@
 import Foundation
 
 struct Holidays {
-    private var holidays: [[String: String]]
+    //private var holidays: [[String: String]]
+    private var holidays = [Holiday]()
 
     init?() {
         let fixedData = """
@@ -29,7 +30,15 @@ struct Holidays {
         ///jsonData -> foundationData
         guard let jsonData = fixedData.data(using: String.Encoding.utf8, allowLossyConversion: false),
             let foundationData = try? JSONSerialization.jsonObject(with: jsonData) as? Array<Dictionary<String,String>> else { return nil }
-        self.holidays = foundationData
+        
+        for index in foundationData {
+            guard
+            let date = index["date"],
+            let subTitle = index["subtitle"]
+            else { continue }
+            self.holidays.append(Holiday(data: date, subtitle: subTitle))
+        }
+        
     }
     
     //MARK: -func
@@ -39,10 +48,15 @@ struct Holidays {
     }
 
     ///holiday 데이터를 반환
-    func sendHoliday(index: Int) -> [String: String]? {
+    func sendHoliday(index: Int) -> Holiday? {
         guard 0 <= index  && index < count() else {
             return nil
         }
         return holidays[index]
     }
+}
+
+struct Holiday {
+    var data: String = ""
+    var subtitle: String = ""
 }
