@@ -12,6 +12,7 @@ class HolidayViewController: UIViewController , UITableViewDataSource {
     
     //MARK: -value
     private var holiday = Holidays()
+    let idCell = "idCell"
 
     //MARK: -IBOutlet
     @IBOutlet weak var holidayTable: UITableView!
@@ -31,7 +32,7 @@ class HolidayViewController: UIViewController , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "idCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: idCell , for: indexPath)
         
         guard let holiday = self.holiday?.sendHoliday(index: indexPath.row) else {
             return cell
