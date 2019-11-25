@@ -54,5 +54,10 @@ STEP18 날씨 앱 저장소
 
 - JSONSerialization를 활용해서 Holidays를 만들었는데, UITableViewDataSource 추가하는 과정에서 dequeueReusableCell를 제대로 쓸 줄 몰라서 어려웠다.
 
+- tableView.dequeueReusableCell(withIdentifier: "idCell", for: indexPath) 이 부분에서 "idCell" 이건 하드코딩을 하기 보다는 코드로 표현하는게 좋다고 피드백 받았다. cell 별로 고유한 id 이니깐 Custom Cell 클래스가 있다면 내부로 옮기는게 좋다.
+- 데이터 구조를 만들때 분리해서 생각하지 못했다.  
+  - holidays 내부에 Holiday 를 표현하는 데이터 구조를 만드는 걸 권장합니다. 최소 데이터 구조 `Holiday`와 그걸 포함하는 콜랙션 `[Holidays]`, 전체 기능을 다루는 `Holidays` 등을 분리해서 생각하세요.
+  - Holiday 자체를 표현하는 데이터 구조를 만들어서 `holiday["date"]` 보다는 `holiday.date` 로 접근하는 게 안전합니다.
+
 
 
