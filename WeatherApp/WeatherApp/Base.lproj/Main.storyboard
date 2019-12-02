@@ -197,21 +197,27 @@
                                                     <rect key="frame" x="0.0" y="-0.5" width="414" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeT-eh-tTh" userLabel="dateLable">
-                                                    <rect key="frame" x="20" y="11" width="57" height="29"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeT-eh-tTh" userLabel="dateLable">
+                                                    <rect key="frame" x="20" y="11" width="57" height="53.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5l-Ll-lS3" userLabel="sibtitleLabel">
-                                                    <rect key="frame" x="352" y="48" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5l-Ll-lS3" userLabel="sibtitleLabel">
+                                                    <rect key="frame" x="352" y="42.5" width="42" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VeT-eh-tTh" firstAttribute="top" secondItem="7U7-3Q-KV0" secondAttribute="topMargin" id="4cR-Kt-MgR"/>
+                                                <constraint firstItem="VeT-eh-tTh" firstAttribute="height" secondItem="7U7-3Q-KV0" secondAttribute="height" multiplier="2/3" id="6Oe-8z-Vfr"/>
+                                                <constraint firstItem="T5l-Ll-lS3" firstAttribute="height" secondItem="7U7-3Q-KV0" secondAttribute="height" multiplier="1/3" id="MJ2-jN-uDB"/>
+                                                <constraint firstItem="T5l-Ll-lS3" firstAttribute="trailing" secondItem="7U7-3Q-KV0" secondAttribute="trailingMargin" id="MPa-Cc-qvl"/>
+                                                <constraint firstItem="VeT-eh-tTh" firstAttribute="leading" secondItem="7U7-3Q-KV0" secondAttribute="leadingMargin" id="nPm-wc-lbn"/>
+                                                <constraint firstItem="T5l-Ll-lS3" firstAttribute="bottom" secondItem="7U7-3Q-KV0" secondAttribute="bottomMargin" id="pDj-En-ujj"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLable" destination="VeT-eh-tTh" id="6Zw-br-Vwc"/>
