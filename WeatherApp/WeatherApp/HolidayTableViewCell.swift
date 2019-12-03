@@ -17,5 +17,23 @@ class HolidayTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLable: UILabel!
     
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    func chooseImage(name: String) {
+        switch name {
+        case "UIColor.gray": self.weatherImage.backgroundColor = UIColor.gray
+        default: self.weatherImage.image = UIImage(named: name)
+        }
+    }
+    
+    func set(holiday: Holiday) {
+        dateLable.text = holiday.data
+        sibtitleLabel.text = holiday.subtitle
+        chooseImage(name: holiday.image)
+    }
+}
 
 }
