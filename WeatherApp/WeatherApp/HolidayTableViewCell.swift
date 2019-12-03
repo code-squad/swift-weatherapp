@@ -43,4 +43,8 @@ class HolidayTableViewCell: UITableViewCell {
     }
 }
 
+extension UITableViewCell {
+    static var reuseID: String {
+        return "\(self)"
+    }
 }
