@@ -21,7 +21,8 @@ struct Holidays {
             let date = index["date"],
             let subTitle = index["subtitle"]
             else { continue }
-            self.holidays.append(Holiday(data: date, subtitle: subTitle))
+            
+            self.holidays.append(Holiday(data: date, subtitle: subTitle, image: changeImage(name: index["image"])))
         }
         
     }
@@ -39,9 +40,21 @@ struct Holidays {
         }
         return holidays[index]
     }
+    
+    /// 이미지파일 이름과 동일하게 변경하기 위해 수정
+    func changeImage(name: String?) -> String {
+        switch name {
+        case "sunny": return "weather-sunny"
+        case "cloudy": return "weather-cloudy"
+        case "snowy": return "weather-snowy"
+        case "rainny": return "weather-rainny"
+        default: return "UIColor.gray"
+        }
+    }
 }
 
 struct Holiday {
     var data: String = ""
     var subtitle: String = ""
+    var image: String = ""
 }
