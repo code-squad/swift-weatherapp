@@ -19,6 +19,9 @@ class HolidayViewController: UIViewController , UITableViewDataSource {
     //MARK: -override
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        holidayTable.rowHeight = 80.0
+        
     }
     
     //MARK: -UITableViewDataSource Add
