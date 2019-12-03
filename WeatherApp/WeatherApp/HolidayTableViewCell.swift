@@ -22,6 +22,13 @@ class HolidayTableViewCell: UITableViewCell {
         // Initialization code
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        dateLable.text = nil
+        sibtitleLabel.text = nil
+        weatherImage.image = nil
+    }
+    
     func chooseImage(name: String) {
         switch name {
         case "UIColor.gray": self.weatherImage.backgroundColor = UIColor.gray
