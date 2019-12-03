@@ -61,3 +61,54 @@ STEP18 날씨 앱 저장소
 
 
 
+## 18-3 : 커스텀 셀
+
+### 화면 이미지
+
+<img src="./img/step03.png" width="200" style="max-width:100%;">
+
+### 핵심 기능
+
+- HolidayViewController.TableView에 새로운 프로토타입 Cell을 추가하고, Custom 스타일 지정
+- URL주소에 있는 JSON 데이터 받아온다. (URLSession 객체를 사용하지않는다.)
+- 이미지가 없을 경우는 회색 배경이 보이도록 처리
+
+### 학습 내용
+
+- 테이블뷰 Custom 셀을 만들고, 테이블뷰를 채우는 방법을 학습
+- 테이블뷰에서 자동으로 결정하는게 아니라 강제로 셀 높이를 지정하는 방법에 대해 학습한다.
+
+## 어려웠던 점
+
+- http로 정보를 읽어오기 위해서 설정을 추가 해줘야한다는것 
+
+  App 보안성을 위해 ATS(App Trasport Secuirty) 라는 정책을 통해 기본적으로 https 통신을 하도록 유도하고 있다. 
+
+  (해결방법 블로그 정리) : https://roeldowney.tistory.com/157
+
+- Cell의 크기가 80이 안되는것 같아서 어떻게 해결해 줄까? 고민을 많이 했다. 
+
+  HolidayViewController의 viewDidLoad 에 아래와 같이 작성하면 된다.
+
+```swift
+override func viewDidLoad() {
+        super.viewDidLoad()
+        holidayTable.rowHeight = 80.0
+}
+```
+
+- HolidayTableViewCell 재사용으로 Image가 없는 화면에 회색 backgroundColor가 아니라 Image가 출력이 되었다. 이걸 해결하기 위해서 아래 코드를 설정 해 주었다.
+
+```swift
+override func prepareForReuse() {
+        super.prepareForReuse()
+        dateLable.text = nil
+        sibtitleLabel.text = nil
+        weatherImage.image = nil
+    }
+```
+
+
+
+
+
